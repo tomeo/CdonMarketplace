@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Version>0.1.0</Version>
+    <OutputType>Library</OutputType>
+    <Description>CDON Marketplace</Description>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Company>Tommy Ivarsson</Company>
+    <Authors>Tommy Ivarsson</Authors>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Contracts\" />
+  </ItemGroup>
+
+</Project>
