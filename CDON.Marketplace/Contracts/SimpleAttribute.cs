@@ -15,6 +15,8 @@ namespace CDON.Marketplace.Contracts
     {
         private SimpleAttributeValue() {}
 
+        public SimpleAttributeValue(string text) : this(null, text) {}
+
         public SimpleAttributeValue(string lang, string text)
         {
             Lang = lang;
