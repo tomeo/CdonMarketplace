@@ -14,7 +14,13 @@ namespace CDON.Marketplace.Contracts
     {
         [XmlAttribute("lang")]
         public string Lang { get; set; }
-        [XmlText]
+        [XmlIgnore]
         public string Text;
+        [XmlElement("Text")]
+        public System.Xml.XmlCDataSection TextCData
+        {
+            get => new System.Xml.XmlDocument().CreateCDataSection(Text);
+            set => Text = value.Value;
+        }
     }
 }
