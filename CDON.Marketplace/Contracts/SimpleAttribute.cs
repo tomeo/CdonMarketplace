@@ -1,4 +1,5 @@
-﻿using System.Xml.Serialization;
+﻿using System.Xml;
+using System.Xml.Serialization;
 
 namespace CDON.Marketplace.Contracts
 {
@@ -12,15 +13,18 @@ namespace CDON.Marketplace.Contracts
 
     public class SimpleAttributeValue
     {
+        private SimpleAttributeValue() {}
+
+        public SimpleAttributeValue(string lang, string text)
+        {
+            Lang = lang;
+            Text = new XmlNode[] {new XmlDocument().CreateCDataSection(text)};
+        }
+        
         [XmlAttribute("lang")]
         public string Lang { get; set; }
-        [XmlIgnore]
-        public string Text;
-        [XmlElement("Text")]
-        public System.Xml.XmlCDataSection TextCData
-        {
-            get => new System.Xml.XmlDocument().CreateCDataSection(Text);
-            set => Text = value.Value;
-        }
+        
+        [XmlText]
+        public XmlNode[] Text { get; set; }
     }
 }

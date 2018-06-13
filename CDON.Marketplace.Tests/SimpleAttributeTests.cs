@@ -10,17 +10,20 @@ namespace CDON.Marketplace.Tests
         [Fact]
         public void ShouldSerializeSimpleAttributeValueTextAsCData()
         {
-            var value = new SimpleAttributeValue
+            var attribute = new SimpleAttribute
             {
-                Lang = "en",
-                Text = "Line1<br><br>Line2"
+                Id = "DESCRIPTION",
+                Values = new []
+                {
+                    new SimpleAttributeValue("en", "Line1<br><br>Line2")
+                }
             };
-            var serializer = new XmlSerializer(typeof(SimpleAttributeValue));
+            var serializer = new XmlSerializer(typeof(SimpleAttribute));
             var writer = new StringWriter();
-            serializer.Serialize(writer, value);
+            serializer.Serialize(writer, attribute);
             var output = writer.ToString();
             Assert.Equal(
-                "<?xml version=\"1.0\" encoding=\"utf-16\"?>\r\n<SimpleAttributeValue xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" lang=\"en\">\r\n  <Text><![CDATA[Line1<br><br>Line2]]></Text>\r\n</SimpleAttributeValue>",
+                "<?xml version=\"1.0\" encoding=\"utf-16\"?>\r\n<SimpleAttribute xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" id=\"DESCRIPTION\">\r\n  <value lang=\"en\"><![CDATA[Line1<br><br>Line2]]></value>\r\n</SimpleAttribute>",
                 output);
         }
     }
