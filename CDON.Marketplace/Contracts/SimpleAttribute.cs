@@ -13,16 +13,18 @@ namespace CDON.Marketplace.Contracts
 
     public class SimpleAttributeValue
     {
-        private SimpleAttributeValue() {}
+        protected SimpleAttributeValue() {}
 
-        public SimpleAttributeValue(string text) : this(null, text) {}
+        public SimpleAttributeValue(string text, bool useCdata = false) : this(null, text, useCdata) {}
 
-        public SimpleAttributeValue(string lang, string text)
+        public SimpleAttributeValue(string lang, string text, bool useCdata = false)
         {
             Lang = lang;
-            Text = new XmlNode[] {new XmlDocument().CreateCDataSection(text)};
+            Text = useCdata ? 
+                new XmlNode[] {new XmlDocument().CreateCDataSection(text)} :
+                new XmlNode[] {new XmlDocument().CreateTextNode(text)};
         }
-        
+
         [XmlAttribute("lang")]
         public string Lang { get; set; }
         
