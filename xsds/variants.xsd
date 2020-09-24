@@ -14,6 +14,7 @@
       <xs:element name="dk" minOccurs="0" maxOccurs="1" type="stringNotNull" />
       <xs:element name="no" minOccurs="0" maxOccurs="1" type="stringNotNull" />
       <xs:element name="fi" minOccurs="0" maxOccurs="1" type="stringNotNull" />
+      <xs:element name="fr" minOccurs="0" maxOccurs="1" type="stringNotNull" />
     </xs:sequence>
   </xs:complexType>
 

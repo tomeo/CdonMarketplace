@@ -1,15 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <xs:schema id="product"
+    targetNamespace="https://schemas.cdon.com/product/4.0/4.9.0/product"
+    xmlns="https://schemas.cdon.com/product/4.0/4.9.0/product"
     attributeFormDefault="unqualified"
     elementFormDefault="qualified"
     xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
-  <xs:include schemaLocation="types.xsd" />
   <xs:include schemaLocation="identities.xsd" />
+  <xs:include schemaLocation="types.xsd" />
   <xs:include schemaLocation="dimensions.xsd" />
   <xs:include schemaLocation="energy.xsd" />
-  <xs:include schemaLocation="categories.xsd" />
-  <xs:include schemaLocation="attributes.xsd" />
   <xs:include schemaLocation="variants.xsd" />
 
   <xs:simpleType name="titleString">
@@ -26,13 +26,14 @@
       <xs:element name="dk" minOccurs="0" maxOccurs="1" type="titleString" />
       <xs:element name="no" minOccurs="0" maxOccurs="1" type="titleString" />
       <xs:element name="fi" minOccurs="0" maxOccurs="1" type="titleString" />
+      <xs:element name="fr" minOccurs="0" maxOccurs="1" type="titleString" />
     </xs:sequence>
   </xs:complexType>
 
   <xs:simpleType name="descriptionString">
     <xs:restriction base="xs:token">
       <xs:minLength value="1" />
-      <xs:maxLength value="3000" />
+      <xs:maxLength value="10000" />
     </xs:restriction>
   </xs:simpleType>
 
@@ -43,6 +44,7 @@
       <xs:element name="dk" minOccurs="0" maxOccurs="1" type="descriptionString" />
       <xs:element name="no" minOccurs="0" maxOccurs="1" type="descriptionString" />
       <xs:element name="fi" minOccurs="0" maxOccurs="1" type="descriptionString" />
+      <xs:element name="fr" minOccurs="0" maxOccurs="1" type="descriptionString" />
     </xs:sequence>
   </xs:complexType>
 
@@ -67,6 +69,7 @@
       <xs:element name="dk" minOccurs="0" maxOccurs="1" type="uspString" />
       <xs:element name="no" minOccurs="0" maxOccurs="1" type="uspString" />
       <xs:element name="fi" minOccurs="0" maxOccurs="1" type="uspString" />
+      <xs:element name="fr" minOccurs="0" maxOccurs="1" type="uspString" />
     </xs:sequence>
   </xs:complexType>
 
@@ -83,7 +86,23 @@
     </xs:restriction>
   </xs:simpleType>
 
-  <xs:complexType name="product">
+  <xs:complexType name="attributes">
+	  <xs:sequence minOccurs="0" maxOccurs="unbounded">
+		  <xs:any processContents="skip"/>
+	  </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="category">
+		<xs:sequence>
+			<xs:choice>
+				<xs:element name="google" type="xs:string" minOccurs="1" maxOccurs="1" />
+				<xs:element name="cdon" type="xs:string" minOccurs="1" maxOccurs="1" />
+			</xs:choice>
+			<xs:element name="attributes" minOccurs="0" maxOccurs="1" type="attributes" />
+		</xs:sequence>
+  </xs:complexType>
+
+	<xs:complexType name="product">
     <xs:sequence>
       <xs:element minOccurs="1" maxOccurs="1" name="identity" type="identity" />
       <xs:element minOccurs="1" maxOccurs="1" name="title" type="title" />

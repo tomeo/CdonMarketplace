@@ -1,5 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <xs:schema id="price"
+    targetNamespace="https://schemas.cdon.com/product/4.0/4.9.0/price"
+    xmlns="https://schemas.cdon.com/product/4.0/4.9.0/price"
     attributeFormDefault="unqualified"
     elementFormDefault="qualified"
     xmlns:xs="http://www.w3.org/2001/XMLSchema">
@@ -144,6 +146,17 @@
 	  </xs:complexContent>
   </xs:complexType>
 
+  <xs:complexType name="marketB2BSE">
+    <xs:complexContent>
+      <xs:extension base="market">
+        <xs:sequence>
+          <xs:element name="vat" type="vat" minOccurs="1" maxOccurs="1">
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
   <xs:complexType name="market" abstract="true">
     <xs:annotation>
       <xs:documentation>
@@ -164,6 +177,7 @@
       <xs:element name="no" type="marketNO" minOccurs="0" maxOccurs="1" />
       <xs:element name="fi" type="marketFI" minOccurs="0" maxOccurs="1" />
       <xs:element name="rakuten_fr" type="marketRakutenFr" minOccurs="0" maxOccurs="1" />
+      <xs:element name="b2b_se" type="marketB2BSE" minOccurs="0" maxOccurs="1" />
     </xs:sequence>
   </xs:complexType>
 
