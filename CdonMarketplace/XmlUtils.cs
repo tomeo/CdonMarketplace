@@ -1,10 +1,11 @@
-﻿using System.Text;
+﻿using System.IO;
+using System.Text;
 using System.Xml;
 using System.Xml.Serialization;
 
-namespace CDON.Marketplace
+namespace CDONMarketplace
 {
-    public static class XMLUtils
+    public static class XmlUtils
     {
         private static readonly XmlWriterSettings WriterSettings =
             new XmlWriterSettings
@@ -15,12 +16,17 @@ namespace CDON.Marketplace
                 Indent = false
             };
 
-        public static string SerializeXML<T>(T subject)
+        public static string SerializeXml<T>(T subject)
         {
-            using var sw = new UTF8StringWriter();
+            using var sw = new Utf8StringWriter();
             using var xw = XmlWriter.Create(sw, WriterSettings);
             new XmlSerializer(typeof(T)).Serialize(xw, subject);
             return sw.ToString().Replace(" xmlns=\"\"", "");
+        }
+
+        public class Utf8StringWriter : StringWriter
+        {
+            public override Encoding Encoding => Encoding.UTF8;
         }
     }
 }

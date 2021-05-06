@@ -7,14 +7,15 @@
     <Title>CDON Marketplace</Title>
     <Description>CDON Marketplace</Description>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Company>Ongoal Sweden AB</Company>
+    <Company>CDON.COM</Company>
     <Authors>Tommy Ivarsson</Authors>
     <PackageProjectUrl>https://github.com/tomeo/CDON.Marketplace</PackageProjectUrl>
     <LangVersion>8</LangVersion>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="System.Text.Json" Version="4.6.0" />
+    <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
+    <PackageReference Include="System.Text.Json" Version="5.0.2" />
   </ItemGroup>
 
 </Project>
