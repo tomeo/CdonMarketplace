@@ -46,11 +46,11 @@ namespace CdonMarketplace.Product
         public string Brand { get; set; }
         
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        private System.Collections.ObjectModel.Collection<UspValue> _usp;
+        private System.Collections.Generic.List<UspValue> _usp;
         
         [System.Xml.Serialization.XmlArrayAttribute("usp")]
         [System.Xml.Serialization.XmlArrayItemAttribute("value", Namespace="https://schemas.cdon.com/product/4.0/4.9.0/product")]
-        public System.Collections.ObjectModel.Collection<UspValue> Usp
+        public System.Collections.Generic.List<UspValue> Usp
         {
             get
             {
@@ -79,7 +79,7 @@ namespace CdonMarketplace.Product
         /// </summary>
         public Product()
         {
-            this._usp = new System.Collections.ObjectModel.Collection<UspValue>();
+            this._usp = new System.Collections.Generic.List<UspValue>();
         }
         
         [System.Xml.Serialization.XmlElementAttribute("energy")]

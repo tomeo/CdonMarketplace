@@ -16,14 +16,14 @@ namespace CdonMarketplace.Utils
                 Indent = false
             };
 
-        public static string SerializeXml<T>(T subject)
+        public static string SerializeXml<T>(T subject, string ns = null)
         {
             using var sw = new Utf8StringWriter();
             using var xw = XmlWriter.Create(sw, WriterSettings);
 
             new XmlSerializer(typeof(T)).Serialize(xw, subject);
-
-            return sw.ToString();
+            
+            return sw.ToString().Replace(" xmlns=\"\"", string.Empty);
         }
 
         public class Utf8StringWriter : StringWriter

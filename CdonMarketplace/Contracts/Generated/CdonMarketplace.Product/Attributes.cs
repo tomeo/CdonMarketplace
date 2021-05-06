@@ -21,10 +21,10 @@ namespace CdonMarketplace.Product
     {
         
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        private System.Collections.ObjectModel.Collection<System.Xml.XmlElement> _any;
+        private System.Collections.Generic.List<System.Xml.XmlElement> _any;
         
         [System.Xml.Serialization.XmlAnyElementAttribute()]
-        public System.Collections.ObjectModel.Collection<System.Xml.XmlElement> Any
+        public System.Collections.Generic.List<System.Xml.XmlElement> Any
         {
             get
             {
@@ -53,7 +53,7 @@ namespace CdonMarketplace.Product
         /// </summary>
         public Attributes()
         {
-            this._any = new System.Collections.ObjectModel.Collection<System.Xml.XmlElement>();
+            this._any = new System.Collections.Generic.List<System.Xml.XmlElement>();
         }
     }
 }

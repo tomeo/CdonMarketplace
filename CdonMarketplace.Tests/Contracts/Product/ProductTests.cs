@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using CdonMarketplace.Product;
 using CdonMarketplace.Utils;
 using Xunit;
@@ -13,7 +12,7 @@ namespace CdonMarketplace.Tests.Contracts.Product
         {
             var marketplace = new Marketplace
             {
-                Product = new Collection<CdonMarketplace.Product.Product>(new List<CdonMarketplace.Product.Product>
+                Product = new List<CdonMarketplace.Product.Product>
                 {
                     new CdonMarketplace.Product.Product
                     {
@@ -22,7 +21,7 @@ namespace CdonMarketplace.Tests.Contracts.Product
                             Id = "Test"
                         }
                     }
-                })
+                }
             };
 
             var xml = XmlUtils.SerializeXml(marketplace);

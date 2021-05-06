@@ -22,11 +22,11 @@ namespace CdonMarketplace.Media
     {
         
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        private System.Collections.ObjectModel.Collection<Product> _product;
+        private System.Collections.Generic.List<Product> _product;
         
         [System.ComponentModel.DataAnnotations.RequiredAttribute()]
         [System.Xml.Serialization.XmlElementAttribute("product")]
-        public System.Collections.ObjectModel.Collection<Product> Product
+        public System.Collections.Generic.List<Product> Product
         {
             get
             {
@@ -43,7 +43,7 @@ namespace CdonMarketplace.Media
         /// </summary>
         public Marketplace()
         {
-            this._product = new System.Collections.ObjectModel.Collection<Product>();
+            this._product = new System.Collections.Generic.List<Product>();
         }
     }
 }

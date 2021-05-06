@@ -9,8 +9,8 @@ curl -O -sS https://schemas.cdon.com/product/4.0/$1/types.xsd && \
 curl -O -sS https://schemas.cdon.com/product/4.0/$1/variants.xsd
 
 OUT=../CdonMarketplace/Contracts/Generated
-
 rm -rf $OUT
+mkdir $OUT
 
 xscgen \
     --prefix=CdonMarketplace \
@@ -23,6 +23,7 @@ xscgen \
     --pascal \
     --separateFiles \
     --collectionSettersMode Public \
+    --collectionType=System.Collections.Generic.List\`1 \
     --output=$OUT \
     product.xsd
 
@@ -34,6 +35,7 @@ xscgen \
     --pascal \
     --separateFiles \
     --collectionSettersMode Public \
+    --collectionType=System.Collections.Generic.List\`1 \
     --output=$OUT \
     price.xsd
 
@@ -45,6 +47,7 @@ xscgen \
     --pascal \
     --separateFiles \
     --collectionSettersMode Public \
+    --collectionType=System.Collections.Generic.List\`1 \
     --output=$OUT \
     availability.xsd
 
@@ -56,6 +59,7 @@ xscgen \
     --pascal \
     --separateFiles \
     --collectionSettersMode Public \
+    --collectionType=System.Collections.Generic.List\`1 \
     --output=$OUT \
     media.xsd
 

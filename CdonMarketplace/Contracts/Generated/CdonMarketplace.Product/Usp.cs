@@ -21,11 +21,11 @@ namespace CdonMarketplace.Product
     {
         
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        private System.Collections.ObjectModel.Collection<UspValue> _value;
+        private System.Collections.Generic.List<UspValue> _value;
         
         [System.ComponentModel.DataAnnotations.RequiredAttribute()]
         [System.Xml.Serialization.XmlElementAttribute("value")]
-        public System.Collections.ObjectModel.Collection<UspValue> Value
+        public System.Collections.Generic.List<UspValue> Value
         {
             get
             {
@@ -42,7 +42,7 @@ namespace CdonMarketplace.Product
         /// </summary>
         public Usp()
         {
-            this._value = new System.Collections.ObjectModel.Collection<UspValue>();
+            this._value = new System.Collections.Generic.List<UspValue>();
         }
     }
 }

@@ -21,10 +21,10 @@ namespace CdonMarketplace.Product
     {
         
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        private System.Collections.ObjectModel.Collection<VariantBySize> _variantBySize;
+        private System.Collections.Generic.List<VariantBySize> _variantBySize;
         
         [System.Xml.Serialization.XmlElementAttribute("variantBySize")]
-        public System.Collections.ObjectModel.Collection<VariantBySize> VariantBySize
+        public System.Collections.Generic.List<VariantBySize> VariantBySize
         {
             get
             {
@@ -53,18 +53,18 @@ namespace CdonMarketplace.Product
         /// </summary>
         public Variants()
         {
-            this._variantBySize = new System.Collections.ObjectModel.Collection<VariantBySize>();
-            this._variantByColor = new System.Collections.ObjectModel.Collection<VariantByColor>();
-            this._variantByFlavor = new System.Collections.ObjectModel.Collection<VariantByFlavor>();
-            this._variantBySizeColor = new System.Collections.ObjectModel.Collection<VariantBySizeColor>();
-            this._variantBySizeFlavor = new System.Collections.ObjectModel.Collection<VariantBySizeFlavor>();
+            this._variantBySize = new System.Collections.Generic.List<VariantBySize>();
+            this._variantByColor = new System.Collections.Generic.List<VariantByColor>();
+            this._variantByFlavor = new System.Collections.Generic.List<VariantByFlavor>();
+            this._variantBySizeColor = new System.Collections.Generic.List<VariantBySizeColor>();
+            this._variantBySizeFlavor = new System.Collections.Generic.List<VariantBySizeFlavor>();
         }
         
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        private System.Collections.ObjectModel.Collection<VariantByColor> _variantByColor;
+        private System.Collections.Generic.List<VariantByColor> _variantByColor;
         
         [System.Xml.Serialization.XmlElementAttribute("variantByColor")]
-        public System.Collections.ObjectModel.Collection<VariantByColor> VariantByColor
+        public System.Collections.Generic.List<VariantByColor> VariantByColor
         {
             get
             {
@@ -89,10 +89,10 @@ namespace CdonMarketplace.Product
         }
         
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        private System.Collections.ObjectModel.Collection<VariantByFlavor> _variantByFlavor;
+        private System.Collections.Generic.List<VariantByFlavor> _variantByFlavor;
         
         [System.Xml.Serialization.XmlElementAttribute("variantByFlavor")]
-        public System.Collections.ObjectModel.Collection<VariantByFlavor> VariantByFlavor
+        public System.Collections.Generic.List<VariantByFlavor> VariantByFlavor
         {
             get
             {
@@ -117,10 +117,10 @@ namespace CdonMarketplace.Product
         }
         
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        private System.Collections.ObjectModel.Collection<VariantBySizeColor> _variantBySizeColor;
+        private System.Collections.Generic.List<VariantBySizeColor> _variantBySizeColor;
         
         [System.Xml.Serialization.XmlElementAttribute("variantBySizeColor")]
-        public System.Collections.ObjectModel.Collection<VariantBySizeColor> VariantBySizeColor
+        public System.Collections.Generic.List<VariantBySizeColor> VariantBySizeColor
         {
             get
             {
@@ -145,10 +145,10 @@ namespace CdonMarketplace.Product
         }
         
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        private System.Collections.ObjectModel.Collection<VariantBySizeFlavor> _variantBySizeFlavor;
+        private System.Collections.Generic.List<VariantBySizeFlavor> _variantBySizeFlavor;
         
         [System.Xml.Serialization.XmlElementAttribute("variantBySizeFlavor")]
-        public System.Collections.ObjectModel.Collection<VariantBySizeFlavor> VariantBySizeFlavor
+        public System.Collections.Generic.List<VariantBySizeFlavor> VariantBySizeFlavor
         {
             get
             {

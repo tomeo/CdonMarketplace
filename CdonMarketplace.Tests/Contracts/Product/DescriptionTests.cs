@@ -1,4 +1,3 @@
-using System.Xml;
 using CdonMarketplace.Product;
 using CdonMarketplace.Utils;
 using Xunit;

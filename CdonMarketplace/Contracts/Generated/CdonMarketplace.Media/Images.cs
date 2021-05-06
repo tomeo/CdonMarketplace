@@ -29,14 +29,14 @@ namespace CdonMarketplace.Media
         public string Main { get; set; }
         
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        private System.Collections.ObjectModel.Collection<string> _extra;
+        private System.Collections.Generic.List<string> _extra;
         
         /// <summary>
         /// <para xml:lang="en">Minimum length: 1.</para>
         /// </summary>
         [System.ComponentModel.DataAnnotations.MinLengthAttribute(1)]
         [System.Xml.Serialization.XmlElementAttribute("extra")]
-        public System.Collections.ObjectModel.Collection<string> Extra
+        public System.Collections.Generic.List<string> Extra
         {
             get
             {
@@ -65,7 +65,7 @@ namespace CdonMarketplace.Media
         /// </summary>
         public Images()
         {
-            this._extra = new System.Collections.ObjectModel.Collection<string>();
+            this._extra = new System.Collections.Generic.List<string>();
         }
     }
 }
