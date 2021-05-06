@@ -17,6 +17,7 @@ xscgen \
     --namespace "|identities.xsd=Identity" \
     --pascal \
     --separateFiles \
+    --collectionSettersMode Public \
     --output=$OUT \
     price.xsd
 
@@ -30,6 +31,7 @@ xscgen \
     --namespace "|identities.xsd=Identity" \
     --pascal \
     --separateFiles \
+    --collectionSettersMode Public \
     --output=$OUT \
     product.xsd
 
@@ -40,6 +42,7 @@ xscgen \
     --namespace "|identities.xsd=Identity" \
     --pascal \
     --separateFiles \
+    --collectionSettersMode Public \
     --output=$OUT \
     availability.xsd
 
@@ -50,8 +53,9 @@ xscgen \
     --namespace "|identities.xsd=Identity" \
     --pascal \
     --separateFiles \
+    --collectionSettersMode Public \
     --output=$OUT \
     media.xsd
 
 # Hack to fix CData
-mv ./Description.cs $OUT/CdonMarketplace.Product/Description.cs
+cp ./Description.cs $OUT/CdonMarketplace.Product/Description.cs
