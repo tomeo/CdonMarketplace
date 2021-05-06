@@ -1,6 +1,6 @@
 ﻿using System.Xml.Serialization;
 
-namespace CdonMarketplace.Contracts
+namespace CdonMarketplace
 {
     public class CData : IXmlSerializable
     {

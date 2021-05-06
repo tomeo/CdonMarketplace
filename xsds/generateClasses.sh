@@ -8,13 +8,16 @@ curl -O -sS https://schemas.cdon.com/product/4.0/$1/product.xsd && \
 curl -O -sS https://schemas.cdon.com/product/4.0/$1/types.xsd && \
 curl -O -sS https://schemas.cdon.com/product/4.0/$1/variants.xsd
 
+OUT=../CdonMarketplace/Contracts/Generated
+
 xscgen \
     --prefix=CdonMarketplace \
     --namespace "|price.xsd=Price" \
     --namespace "|types.xsd=Price" \
     --namespace "|identities.xsd=Identity" \
     --pascal \
-    --output=../CDON.Marketplace/Contracts \
+    --separateFiles \
+    --output=$OUT \
     price.xsd
 
 xscgen \
@@ -26,7 +29,8 @@ xscgen \
     --namespace "|variants.xsd=Product" \
     --namespace "|identities.xsd=Identity" \
     --pascal \
-    --output=../CDON.Marketplace/Contracts \
+    --separateFiles \
+    --output=$OUT \
     product.xsd
 
 xscgen \
@@ -35,7 +39,8 @@ xscgen \
     --namespace "|types.xsd=Availability" \
     --namespace "|identities.xsd=Identity" \
     --pascal \
-    --output=../CDON.Marketplace/Contracts \
+    --separateFiles \
+    --output=$OUT \
     availability.xsd
 
 xscgen \
@@ -44,5 +49,9 @@ xscgen \
     --namespace "|types.xsd=Media" \
     --namespace "|identities.xsd=Identity" \
     --pascal \
-    --output=../CDON.Marketplace/Contracts \
+    --separateFiles \
+    --output=$OUT \
     media.xsd
+
+# Hack to fix CData
+mv ./Description.cs $OUT/CdonMarketplace.Product/Description.cs

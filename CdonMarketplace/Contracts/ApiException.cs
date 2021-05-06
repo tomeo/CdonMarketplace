@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CdonMarketplace.Contracts
+namespace CdonMarketplace
 {
     public class ApiException : Exception
     {
