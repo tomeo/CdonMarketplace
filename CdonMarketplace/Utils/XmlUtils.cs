@@ -20,8 +20,10 @@ namespace CdonMarketplace.Utils
         {
             using var sw = new Utf8StringWriter();
             using var xw = XmlWriter.Create(sw, WriterSettings);
+
             new XmlSerializer(typeof(T)).Serialize(xw, subject);
-            return sw.ToString().Replace(" xmlns=\"\"", "");
+
+            return sw.ToString();
         }
 
         public class Utf8StringWriter : StringWriter

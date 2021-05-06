@@ -10,16 +10,7 @@ curl -O -sS https://schemas.cdon.com/product/4.0/$1/variants.xsd
 
 OUT=../CdonMarketplace/Contracts/Generated
 
-xscgen \
-    --prefix=CdonMarketplace \
-    --namespace "|price.xsd=Price" \
-    --namespace "|types.xsd=Price" \
-    --namespace "|identities.xsd=Identity" \
-    --pascal \
-    --separateFiles \
-    --collectionSettersMode Public \
-    --output=$OUT \
-    price.xsd
+rm -rf $OUT
 
 xscgen \
     --prefix=CdonMarketplace \
@@ -28,7 +19,7 @@ xscgen \
     --namespace "|dimensions.xsd=Product" \
     --namespace "|energy.xsd=Product" \
     --namespace "|variants.xsd=Product" \
-    --namespace "|identities.xsd=Identity" \
+    --namespace "|identities.xsd=Product" \
     --pascal \
     --separateFiles \
     --collectionSettersMode Public \
@@ -37,9 +28,20 @@ xscgen \
 
 xscgen \
     --prefix=CdonMarketplace \
+    --namespace "|price.xsd=Price" \
+    --namespace "|types.xsd=Price" \
+    --namespace "|identities.xsd=Price" \
+    --pascal \
+    --separateFiles \
+    --collectionSettersMode Public \
+    --output=$OUT \
+    price.xsd
+
+xscgen \
+    --prefix=CdonMarketplace \
     --namespace "|availability.xsd=Availability" \
     --namespace "|types.xsd=Availability" \
-    --namespace "|identities.xsd=Identity" \
+    --namespace "|identities.xsd=Availability" \
     --pascal \
     --separateFiles \
     --collectionSettersMode Public \
@@ -50,7 +52,7 @@ xscgen \
     --prefix=CdonMarketplace \
     --namespace "|media.xsd=Media" \
     --namespace "|types.xsd=Media" \
-    --namespace "|identities.xsd=Identity" \
+    --namespace "|identities.xsd=Media" \
     --pascal \
     --separateFiles \
     --collectionSettersMode Public \

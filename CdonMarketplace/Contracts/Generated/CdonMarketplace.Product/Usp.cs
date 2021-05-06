@@ -31,7 +31,7 @@ namespace CdonMarketplace.Product
             {
                 return this._value;
             }
-            private set
+            set
             {
                 this._value = value;
             }

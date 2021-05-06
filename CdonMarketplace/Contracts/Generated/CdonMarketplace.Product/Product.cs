@@ -22,7 +22,7 @@ namespace CdonMarketplace.Product
         
         [System.ComponentModel.DataAnnotations.RequiredAttribute()]
         [System.Xml.Serialization.XmlElementAttribute("identity")]
-        public CdonMarketplace.Identity.Identity Identity { get; set; }
+        public CdonMarketplace.Product.Identity Identity { get; set; }
         
         [System.ComponentModel.DataAnnotations.RequiredAttribute()]
         [System.Xml.Serialization.XmlElementAttribute("title")]
@@ -56,7 +56,7 @@ namespace CdonMarketplace.Product
             {
                 return this._usp;
             }
-            private set
+            set
             {
                 this._usp = value;
             }

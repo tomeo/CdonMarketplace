@@ -32,7 +32,7 @@ namespace CdonMarketplace.Price
             {
                 return this._product;
             }
-            private set
+            set
             {
                 this._product = value;
             }

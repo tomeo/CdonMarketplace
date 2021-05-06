@@ -30,7 +30,7 @@ namespace CdonMarketplace.Product
             {
                 return this._variantBySize;
             }
-            private set
+            set
             {
                 this._variantBySize = value;
             }
@@ -70,7 +70,7 @@ namespace CdonMarketplace.Product
             {
                 return this._variantByColor;
             }
-            private set
+            set
             {
                 this._variantByColor = value;
             }
@@ -98,7 +98,7 @@ namespace CdonMarketplace.Product
             {
                 return this._variantByFlavor;
             }
-            private set
+            set
             {
                 this._variantByFlavor = value;
             }
@@ -126,7 +126,7 @@ namespace CdonMarketplace.Product
             {
                 return this._variantBySizeColor;
             }
-            private set
+            set
             {
                 this._variantBySizeColor = value;
             }
@@ -154,7 +154,7 @@ namespace CdonMarketplace.Product
             {
                 return this._variantBySizeFlavor;
             }
-            private set
+            set
             {
                 this._variantBySizeFlavor = value;
             }

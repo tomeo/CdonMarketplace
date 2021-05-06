@@ -42,7 +42,7 @@ namespace CdonMarketplace.Media
             {
                 return this._extra;
             }
-            private set
+            set
             {
                 this._extra = value;
             }
