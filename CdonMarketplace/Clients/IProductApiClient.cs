@@ -1,8 +1,8 @@
 using System.Threading.Tasks;
 
-namespace CdonMarketplace
+namespace CdonMarketplace.Clients
 {
-    public interface ICdonClient
+    public interface IProductApiClient
     {
         Task<Receipt> UploadProduct(Product.Marketplace products);
         Task<Receipt> UploadPrice(Price.Marketplace prices);

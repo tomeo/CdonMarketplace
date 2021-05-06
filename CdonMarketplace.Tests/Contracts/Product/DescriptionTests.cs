@@ -1,6 +1,6 @@
 using System.Xml;
-using CDONMarketplace;
 using CdonMarketplace.Product;
+using CdonMarketplace.Utils;
 using Xunit;
 
 namespace CdonMarketplace.Tests.Contracts.Product

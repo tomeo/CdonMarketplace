@@ -3,11 +3,12 @@ using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
-using System.Threading.Tasks;
 using System.Text.Json;
-using CDONMarketplace;
+using System.Threading.Tasks;
+using CdonMarketplace.Contracts;
+using CdonMarketplace.Utils;
 
-namespace CdonMarketplace
+namespace CdonMarketplace.Clients
 {
     public class Receipt
     {
@@ -15,7 +16,7 @@ namespace CdonMarketplace
         public string StatusUrl { get; set; }
     }
 
-    public class CdonClient : ICdonClient
+    public class ProductApiClient : IProductApiClient
     {
         private readonly HttpClient _client;
         private static readonly JsonSerializerOptions DeserializeOptions = new JsonSerializerOptions
@@ -24,7 +25,7 @@ namespace CdonMarketplace
             WriteIndented = false
         };
 
-        public CdonClient(string baseUrl, string apiKey)
+        public ProductApiClient(string baseUrl, string apiKey)
         {
             _client = new HttpClient(new HttpClientHandler
             {
@@ -60,35 +61,6 @@ namespace CdonMarketplace
             }
 
             return JsonSerializer.Deserialize<Receipt>(responseContent, DeserializeOptions);
-        }
-    }
-
-    public class FileSystemClient : ICdonClient
-    {
-        private readonly string _path;
-
-        public FileSystemClient(string path)
-        {
-            _path = path;
-        }
-
-        public async Task<Receipt> UploadProduct(Product.Marketplace products) => await DoRequest(products, "product");
-        public async Task<Receipt> UploadPrice(Price.Marketplace prices) => await DoRequest(prices, "price");
-        public async Task<Receipt> UploadMedia(Media.Marketplace media) => await DoRequest(media, "media");
-        public async Task<Receipt> UploadAvailability(Availability.Marketplace availability) => await DoRequest(availability, "availability");
-
-        private async Task<Receipt> DoRequest<T>(T content, string filename)
-        {
-            var xml = XmlUtils.SerializeXml(content);
-            var fullPath = System.IO.Path.Combine(_path, $"{filename}.xml");
-
-            using var outputFile = new System.IO.StreamWriter(fullPath, false, Encoding.UTF8);
-            await outputFile.WriteAsync(xml);
-            return new Receipt
-            {
-                ReceiptId = fullPath,
-                StatusUrl = fullPath
-            };
         }
     }
 }
