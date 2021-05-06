@@ -16,3 +16,7 @@ The version you want to generate is given as a parameter to the script:
 ```
 ./generateClasses.sh 4.9.0
 ```
+
+### Add CData
+
+The class `Description` in `CdonMarketplace/Contracts/CdonMarketplace.Product.cs` needs to have its properties `Default, Se, Dk, No, Fi, Fr` changed from `string` to `CData`.
