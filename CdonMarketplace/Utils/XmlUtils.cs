@@ -16,7 +16,7 @@ namespace CdonMarketplace.Utils
                 Indent = false
             };
 
-        public static string SerializeXml<T>(T subject, string ns = null)
+        public static string SerializeXml<T>(T subject)
         {
             using var sw = new Utf8StringWriter();
             using var xw = XmlWriter.Create(sw, WriterSettings);
