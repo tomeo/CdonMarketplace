@@ -131,15 +131,23 @@ services.AddSingleton<IProductApiClient>(
 ```
 
 ```cs
-public class ProductHandler
+public class CdonHandler
 {
     private readonly IProductApiClient _client;
 
-    public async Task Handle(IEnumerable<CdonMarketplace.Product.Product> products)
+    public async Task HandleProducts(IEnumerable<CdonMarketplace.Product.Product> products)
     {
         var productReceipt = await _client.UploadProduct(new CdonMarketplace.Product.Marketplace
         {
             Product = products
+        });
+    }
+
+    public async Task HandlePrices(IEnumerable<CdonMarketplace.Price.Product> prices)
+    {
+        var priceReceipt = await _client.UploadProduct(new CdonMarketplace.Price.Marketplace
+        {
+            Product = prices
         });
     }
 }
