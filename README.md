@@ -130,6 +130,7 @@ services.AddSingleton<IProductApiClient>(
         Configuration.Get("CDON_APIKEY")));
 ```
 
+Using the client:
 ```cs
 public class CdonHandler
 {
