@@ -7,7 +7,7 @@
         <Description>CDON Marketplace</Description>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <Company>CDON.COM</Company>
-        <Authors>Tommy Ivarsson</Authors>
+        <Authors>CDON.COM</Authors>
         <PackageProjectUrl>https://github.com/tomeo/CDON.Marketplace</PackageProjectUrl>
         <PackageIcon>CDON.png</PackageIcon>
         <LangVersion>8</LangVersion>
