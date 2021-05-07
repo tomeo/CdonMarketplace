@@ -121,7 +121,7 @@ var price = new CdonMarketplace.Price.Product
 ```
 
 ### ProductApiClient
-The `ProductApiClient` will post your products directly to CDON using `CDON_BASEURI` as the API-URL and `CDON_APIKEY` as the API-Key`.
+The `ProductApiClient` will post your products directly to CDON using `CDON_BASEURI` as the API-URL and `CDON_APIKEY` as the `API-Key`.
 
 In Startup.cs:
 ```cs
