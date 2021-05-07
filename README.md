@@ -127,17 +127,17 @@ In Startup.cs:
 ```cs
 services.AddSingleton<IProductApiClient>(
     new ProductApiClient(
-        Configuration.Get("CDON_BASEURI"),
-        Configuration.Get("CDON_APIKEY")));
+        Environment.GetEnvironmentVariable("CDON_BASEURI"),
+        Environment.GetEnvironmentVariable("CDON_APIKEY")));
 ```
 
 ### ProductApiFileSystemClient
 The `ProductApiFileSystemClient` will create XML on your machine on the path `OUTPUT_PATH` that you provide. This is mainly used for debugging.
 
-```
+```cs
 services.AddSingleton<IProductApiClient>(
     new ProductApiFileSystemClient(
-        Configuration.Get("OUTPUT_PATH")));
+        Environment.GetEnvironmentVariable("OUTPUT_PATH")));
 ```
 
 ### Using IProductApiClient
