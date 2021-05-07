@@ -18,7 +18,7 @@ The product API uses four different types to describe a product:
 ### Creating product
 
 ```cs
-new CdonMarketplace.Product.Product
+var product = new CdonMarketplace.Product.Product
 {
     Identity = new Identity
     {
@@ -99,7 +99,7 @@ All Google categories come from https://www.google.com/basepages/producttype/tax
 ### Creating price
 
 ```cs
-new CdonMarketplace.Price.Product
+var price = new CdonMarketplace.Price.Product
 {
     Id = "your_sku",
     Se = new MarketSE
