@@ -140,7 +140,7 @@ services.AddSingleton<IProductApiClient>(
         Configuration.Get("OUTPUT_PATH")));
 ```
 
-Using the clients:
+### Using IProductApiClient
 ```cs
 public class CdonHandler
 {
