@@ -121,6 +121,7 @@ var price = new CdonMarketplace.Price.Product
 ```
 
 ### ProductApiClient
+The `ProductApiClient` will post your products directly to CDON using `CDON_BASEURI` as the API-URL and `CDON_APIKEY` as the API-Key`.
 
 In Startup.cs:
 ```cs
@@ -130,7 +131,16 @@ services.AddSingleton<IProductApiClient>(
         Configuration.Get("CDON_APIKEY")));
 ```
 
-Using the client:
+### ProductApiFileSystemClient
+The `ProductApiFileSystemClient` will create XML on your machine on the path `OUTPUT_PATH` that you provide. This is mainly used for debugging.
+
+```
+services.AddSingleton<IProductApiClient>(
+    new ProductApiFileSystemClient(
+        Configuration.Get("OUTPUT_PATH")));
+```
+
+Using the clients:
 ```cs
 public class CdonHandler
 {
