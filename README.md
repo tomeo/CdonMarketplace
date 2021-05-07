@@ -102,6 +102,29 @@ var marketplace = new Marketplace
 
 All Google categories come from https://www.google.com/basepages/producttype/taxonomy.en-US.txt
 
+### Creating price
+
+```cs
+new CdonMarketplace.Price.Product
+{
+    Id = "your_sku",
+    Se = new MarketSE
+    {
+        OriginalPrice = 1337,
+        SalePrice = 999,
+        ShippingCost = MarketSEShippingCost.Item0,
+        Vat = 25,
+    },
+    Dk = new MarketDK
+    {
+        OriginalPrice = 1337,
+        SalePrice = 999,
+        ShippingCost = MarketDKShippingCost.Item0,
+        Vat = 25,
+    }
+}
+```
+
 ### ProductApiClient
 
 In Startup.cs:
