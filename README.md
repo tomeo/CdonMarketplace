@@ -120,6 +120,76 @@ var price = new CdonMarketplace.Price.Product
 }
 ```
 
+#### ShippingCost
+
+Shipping costs are set per variant and per channel. The shipping cost has to be set to one of the predefined levels for each channel:
+
+| MarketSEShippingCost | Cost     |
+| -------------------- | -------- |
+| Item0                | 0 SEK    |
+| Item19               | 19 SEK   |
+| Item29               | 29 SEK   |
+| Item39               | 39 SEK   |
+| Item49               | 49 SEK   |
+| Item59               | 59 SEK   |
+| Item79               | 79 SEK   |
+| Item99               | 99 SEK   |
+| Item199              | 199 SEK  |
+| Item249              | 249 SEK  |
+| Item299              | 299 SEK  |
+| Item395              | 395 SEK  |
+| Item495              | 495 SEK  |
+| Item499              | 499 SEK  |
+| Item995              | 995 SEK  |
+| Item1499             | 1499 SEK |
+| Item3499             | 3499 SEK |
+
+| MarketDKShippingCost | Cost    |
+| -------------------- | ------- |
+| Item0                | 0 DKK   |
+| Item19               | 19 DKK  |
+| Item29               | 29 DKK  |
+| Item39               | 39 DKK  |
+| Item49               | 49 DKK  |
+| Item59               | 59 DKK  |
+| Item79               | 79 DKK  |
+| Item99               | 99 DKK  |
+| Item199              | 199 DKK |
+| Item299              | 299 DKK |
+| Item495              | 495 DKK |
+| Item995              | 995 DKK |
+
+| MarketNOShippingCost | Cost    |
+| -------------------- | ------- |
+| Item0                | 0 NOK   |
+| Item19               | 19 NOK  |
+| Item39               | 39 NOK  |
+| Item49               | 49 NOK  |
+| Item59               | 59 NOK  |
+| Item79               | 79 NOK  |
+| Item99               | 99 NOK  |
+| Item199              | 199 NOK |
+| Item299              | 399 NOK |
+| Item495              | 799 NOK |
+| Item995              | 995 NOK |
+
+| MarketFIShippingCost | Cost      |
+| -------------------- | --------- |
+| Item0                | 0 EUR     |
+| Item1Period95        | 1.95 EUR  |
+| Item2Period95        | 2.95 EUR  |
+| Item3Period95        | 3.95 EUR  |
+| Item4Period90        | 4.90 EUR  |
+| Item4Period95        | 4.95 EUR  |
+| Item5Period95        | 5.95 EUR  |
+| Item7Period95        | 7.95 EUR  |
+| Item9Period95        | 9.95 EUR  |
+| Item19Period5        | 19.95 EUR |
+| Item39Period5        | 39.5 EUR  |
+| Item59               | 59 EUR    |
+| Item79               | 79 EUR    |
+| Item99Period5        | 99.5 EUR  |
+
 ### ProductApiClient
 The `ProductApiClient` will post your products directly to CDON using `CDON_BASEURI` as the API-URL and `CDON_APIKEY` as the `API-Key`.
 
