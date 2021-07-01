@@ -195,7 +195,7 @@ Shipping costs are set per variant and per channel. The shipping cost has to be 
 | Item99Period5        | 99.5 EUR  |
 
 ### ProductApiClient
-The `ProductApiClient` will post your products directly to CDON using `CDON_BASEURI` as the API-URL and `CDON_APIKEY` as the `API-Key`.
+The `ProductApiClient` will post your products directly to CDON using `CDON_BASEURI` as the API-URL and `CDON_APIKEY` as the API-Key. You will find your API-Key at the bottom of the [Connect Help Page](https://connect.marketplace.cdon.com/help).
 
 In Startup.cs:
 ```cs
