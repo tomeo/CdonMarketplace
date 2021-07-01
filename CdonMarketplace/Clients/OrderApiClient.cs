@@ -6,6 +6,7 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using CdonMarketplace.Contracts.Order;
+using CdonMarketplace.Extensions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
@@ -81,6 +82,14 @@ namespace CdonMarketplace.Clients
             response.EnsureSuccessStatusCode();
             var content = await response.Content.ReadAsStringAsync();
             return JsonConvert.DeserializeObject<Order>(content);
+        }
+
+        public async Task<Order> ReturnOrder(OrderReturn orderReturn)
+        {
+            var response = await _client.PostJson("api/orderreturn", orderReturn);
+            response.EnsureSuccessStatusCode();
+            return JsonConvert.DeserializeObject<Order>(
+                await response.Content.ReadAsStringAsync());
         }
     }
 }
