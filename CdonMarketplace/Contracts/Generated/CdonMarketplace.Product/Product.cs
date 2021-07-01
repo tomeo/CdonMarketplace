@@ -92,41 +92,137 @@ namespace CdonMarketplace.Product
         /// <para xml:lang="en">Minimum exclusive value: 1900-01-01.</para>
         /// <para xml:lang="en">Maximum inclusive value: 2079-06-06.</para>
         /// </summary>
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("releaseDate", DataType="date")]
-        public System.DateTime ReleaseDate { get; set; }
+        public System.DateTime ReleaseDateValue { get; set; }
         
         /// <summary>
         /// <para xml:lang="en">Gets or sets a value indicating whether the ReleaseDate property is specified.</para>
         /// </summary>
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool ReleaseDateSpecified { get; set; }
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        public bool ReleaseDateValueSpecified { get; set; }
         
+        /// <summary>
+        /// <para xml:lang="en">Minimum exclusive value: 1900-01-01.</para>
+        /// <para xml:lang="en">Maximum inclusive value: 2079-06-06.</para>
+        /// </summary>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public System.Nullable<System.DateTime> ReleaseDate
+        {
+            get
+            {
+                if (this.ReleaseDateValueSpecified)
+                {
+                    return this.ReleaseDateValue;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            set
+            {
+                this.ReleaseDateValue = value.GetValueOrDefault();
+                this.ReleaseDateValueSpecified = value.HasValue;
+            }
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("isAdult")]
-        public bool IsAdult { get; set; }
+        public bool IsAdultValue { get; set; }
         
         /// <summary>
         /// <para xml:lang="en">Gets or sets a value indicating whether the IsAdult property is specified.</para>
         /// </summary>
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool IsAdultSpecified { get; set; }
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        public bool IsAdultValueSpecified { get; set; }
         
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public System.Nullable<bool> IsAdult
+        {
+            get
+            {
+                if (this.IsAdultValueSpecified)
+                {
+                    return this.IsAdultValue;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            set
+            {
+                this.IsAdultValue = value.GetValueOrDefault();
+                this.IsAdultValueSpecified = value.HasValue;
+            }
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("isDrug")]
-        public bool IsDrug { get; set; }
+        public bool IsDrugValue { get; set; }
         
         /// <summary>
         /// <para xml:lang="en">Gets or sets a value indicating whether the IsDrug property is specified.</para>
         /// </summary>
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool IsDrugSpecified { get; set; }
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        public bool IsDrugValueSpecified { get; set; }
         
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public System.Nullable<bool> IsDrug
+        {
+            get
+            {
+                if (this.IsDrugValueSpecified)
+                {
+                    return this.IsDrugValue;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            set
+            {
+                this.IsDrugValue = value.GetValueOrDefault();
+                this.IsDrugValueSpecified = value.HasValue;
+            }
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("isPreOwned")]
-        public bool IsPreOwned { get; set; }
+        public bool IsPreOwnedValue { get; set; }
         
         /// <summary>
         /// <para xml:lang="en">Gets or sets a value indicating whether the IsPreOwned property is specified.</para>
         /// </summary>
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool IsPreOwnedSpecified { get; set; }
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        public bool IsPreOwnedValueSpecified { get; set; }
+        
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public System.Nullable<bool> IsPreOwned
+        {
+            get
+            {
+                if (this.IsPreOwnedValueSpecified)
+                {
+                    return this.IsPreOwnedValue;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            set
+            {
+                this.IsPreOwnedValue = value.GetValueOrDefault();
+                this.IsPreOwnedValueSpecified = value.HasValue;
+            }
+        }
         
         [System.Xml.Serialization.XmlElementAttribute("variants")]
         public CdonMarketplace.Product.Variants Variants { get; set; }

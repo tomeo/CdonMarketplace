@@ -22,6 +22,7 @@ xscgen \
     --namespace "|identities.xsd=Product" \
     --pascal \
     --separateFiles \
+    --nullable \
     --collectionSettersMode Public \
     --collectionType=System.Collections.Generic.List\`1 \
     --output=$OUT \
