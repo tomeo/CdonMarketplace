@@ -70,5 +70,17 @@ namespace CdonMarketplace.Clients
 
             return JsonConvert.DeserializeObject<Order>(content);
         }
+
+        public async Task<Order> FulfillOrder(Fulfillment fulfillment)
+        {
+            var response = await _client.PostAsync("api/orderdelivery",
+                new StringContent(
+                    JsonConvert.SerializeObject(fulfillment),
+                    System.Text.Encoding.UTF8,
+                    "application/json"));
+            response.EnsureSuccessStatusCode();
+            var content = await response.Content.ReadAsStringAsync();
+            return JsonConvert.DeserializeObject<Order>(content);
+        }
     }
 }
