@@ -9,7 +9,8 @@ namespace CdonMarketplace.Clients
         Task<IEnumerable<Order>> GetPendingOrders(PendingOrdersOptions options = null);
         Task<IEnumerable<Order>> GetAllPendingOrders(PendingOrdersOptions options = null);
         Task<Order> GetOrder(int orderId);
-        Task<Order> FulfillOrder(OrderFulfillment orderFulfillment);
-        Task<Order> ReturnOrder(OrderReturn orderReturn);
+        Task<Order> FulfillOrderRows(OrderFulfillment orderFulfillment);
+        Task<Order> ReturnOrderRows(OrderReturn orderReturn);
+        Task<Order> CancelOrderRows(OrderCancel orderCancel);
     }
 }

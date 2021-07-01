@@ -65,7 +65,7 @@ namespace CdonMarketplace.Clients
                 await response.Content.ReadAsStringAsync());
         }
 
-        public async Task<Order> FulfillOrder(OrderFulfillment orderFulfillment)
+        public async Task<Order> FulfillOrderRows(OrderFulfillment orderFulfillment)
         {
             var response = await _client.PostJson("api/orderdelivery", orderFulfillment);
             response.EnsureSuccessStatusCode();
@@ -73,9 +73,17 @@ namespace CdonMarketplace.Clients
                 await response.Content.ReadAsStringAsync());
         }
 
-        public async Task<Order> ReturnOrder(OrderReturn orderReturn)
+        public async Task<Order> ReturnOrderRows(OrderReturn orderReturn)
         {
             var response = await _client.PostJson("api/orderreturn", orderReturn);
+            response.EnsureSuccessStatusCode();
+            return JsonConvert.DeserializeObject<Order>(
+                await response.Content.ReadAsStringAsync());
+        }
+
+        public async Task<Order> CancelOrderRows(OrderCancel orderCancel)
+        {
+            var response = await _client.PostJson("api/ordercancel", orderCancel);
             response.EnsureSuccessStatusCode();
             return JsonConvert.DeserializeObject<Order>(
                 await response.Content.ReadAsStringAsync());
