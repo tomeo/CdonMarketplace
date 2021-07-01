@@ -94,7 +94,11 @@ var product = new CdonMarketplace.Product.Product
 
 #### Categories and attributes
 
-All Google categories come from https://www.google.com/basepages/producttype/taxonomy.en-US.txt
+General information about categories and attributes in the CDON Marketplace API can be found at the CDON Marketplace Help Center [Categories, Attributes & Navigation](https://connect.marketplace.cdon.com/help/product_data_specification) page.
+
+Quicklinks:
+* [Google Category Taxonomy](https://www.google.com/basepages/producttype/taxonomy.en-US.txt)
+* [Excel-file containing Google Categories and Attributes](https://mcprodsa.blob.core.windows.net/public/CDON%20-%20Categories,%20Attributes%20&%20Navigation.xlsx)
 
 ### Creating price
 
