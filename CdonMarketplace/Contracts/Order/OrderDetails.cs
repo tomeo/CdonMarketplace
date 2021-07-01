@@ -5,7 +5,7 @@ namespace CdonMarketplace.Contracts.Order
     public class OrderDetails
     {
         public string OrderKey { get; set; }
-        public string OrderId { get; set; }
+        public int OrderId { get; set; }
         public FulfillmentStatus State { get; set; }
         public PaymentStatus PaymentStatus { get; set; }
         public DateTime CreatedDateUtc { get; set; }

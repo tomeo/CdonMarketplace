@@ -1,6 +1,6 @@
 ﻿namespace CdonMarketplace.Contracts.Order
 {
-    public class FulfillmentRow
+    public class OrderFulfillmentRow
     {
         public int? OrderRowId { get; set; }
         public int QuantityToDeliver { get; set; }

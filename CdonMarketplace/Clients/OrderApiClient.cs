@@ -8,7 +8,6 @@ using System.Threading.Tasks;
 using CdonMarketplace.Contracts.Order;
 using CdonMarketplace.Extensions;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 
 namespace CdonMarketplace.Clients
 {
@@ -39,11 +38,8 @@ namespace CdonMarketplace.Clients
             }
             response.EnsureSuccessStatusCode();
 
-            var result = await response.Content.ReadAsStringAsync();
-
-            return JArray.Parse(result)
-                .Select(t => JsonConvert.DeserializeObject<Order>(t.ToString()))
-                .ToArray();
+            return JsonConvert.DeserializeObject<Order[]>(
+                await response.Content.ReadAsStringAsync());
         }
 
         public async Task<IEnumerable<Order>> GetAllPendingOrders(PendingOrdersOptions options = null)
@@ -61,27 +57,20 @@ namespace CdonMarketplace.Clients
             return pendingOrders;
         }
 
-        public async Task<Order> GetOrder(string orderId)
+        public async Task<Order> GetOrder(int orderId)
         {
             var response = await _client.GetAsync($"/api/order/{orderId}");
-            
             response.EnsureSuccessStatusCode();
-
-            var content = await response.Content.ReadAsStringAsync();
-
-            return JsonConvert.DeserializeObject<Order>(content);
+            return JsonConvert.DeserializeObject<Order>(
+                await response.Content.ReadAsStringAsync());
         }
 
-        public async Task<Order> FulfillOrder(Fulfillment fulfillment)
+        public async Task<Order> FulfillOrder(OrderFulfillment orderFulfillment)
         {
-            var response = await _client.PostAsync("api/orderdelivery",
-                new StringContent(
-                    JsonConvert.SerializeObject(fulfillment),
-                    System.Text.Encoding.UTF8,
-                    "application/json"));
+            var response = await _client.PostJson("api/orderdelivery", orderFulfillment);
             response.EnsureSuccessStatusCode();
-            var content = await response.Content.ReadAsStringAsync();
-            return JsonConvert.DeserializeObject<Order>(content);
+            return JsonConvert.DeserializeObject<Order>(
+                await response.Content.ReadAsStringAsync());
         }
 
         public async Task<Order> ReturnOrder(OrderReturn orderReturn)

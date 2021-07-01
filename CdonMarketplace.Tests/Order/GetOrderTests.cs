@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
 using Xunit;
 
 namespace CdonMarketplace.Tests.Order
@@ -10,7 +11,7 @@ namespace CdonMarketplace.Tests.Order
         {
             var orderId = LaunchSettingsProvider.GetEnvironmentalVariables()["GETORDER_ORDERID"];
             var client = OrderApiClientFactory.Create();
-            var order = await client.GetOrder(orderId);
+            var order = await client.GetOrder(Convert.ToInt32(orderId));
             Assert.NotNull(order);
         }
     }
