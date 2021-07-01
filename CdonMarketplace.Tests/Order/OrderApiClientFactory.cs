@@ -4,7 +4,7 @@ namespace CdonMarketplace.Tests.Order
 {
     public static class OrderApiClientFactory
     {
-        public static OrderApiClient Create()
+        public static IOrderApiClient Create()
         {
             var environmentalVariables = LaunchSettingsProvider.GetEnvironmentalVariables();
             var uri = environmentalVariables["CDON_MARKETPLACE_URI"];

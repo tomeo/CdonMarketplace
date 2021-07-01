@@ -41,7 +41,6 @@ namespace CdonMarketplace.Clients
             var result = await response.Content.ReadAsStringAsync();
 
             return JArray.Parse(result)
-                .Select(o => o.SelectToken("OrderDetails"))
                 .Select(t => JsonConvert.DeserializeObject<Order>(t.ToString()))
                 .ToArray();
         }
@@ -59,6 +58,17 @@ namespace CdonMarketplace.Clients
                 options.Skip += options.Take;
             } while (fetchedOrders.Length == options.Take);
             return pendingOrders;
+        }
+
+        public async Task<Order> GetOrder(string orderId)
+        {
+            var response = await _client.GetAsync($"/api/order/{orderId}");
+            
+            response.EnsureSuccessStatusCode();
+
+            var content = await response.Content.ReadAsStringAsync();
+
+            return JsonConvert.DeserializeObject<Order>(content);
         }
     }
 }
