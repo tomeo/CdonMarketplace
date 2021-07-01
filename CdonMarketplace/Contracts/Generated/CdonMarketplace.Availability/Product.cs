@@ -33,14 +33,37 @@ namespace CdonMarketplace.Availability
         [System.Xml.Serialization.XmlElementAttribute("id")]
         public string Id { get; set; }
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("status")]
-        public Status Status { get; set; }
+        public Status StatusValue { get; set; }
         
         /// <summary>
         /// <para xml:lang="en">Gets or sets a value indicating whether the Status property is specified.</para>
         /// </summary>
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool StatusSpecified { get; set; }
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        public bool StatusValueSpecified { get; set; }
+        
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public System.Nullable<Status> Status
+        {
+            get
+            {
+                if (this.StatusValueSpecified)
+                {
+                    return this.StatusValue;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            set
+            {
+                this.StatusValue = value.GetValueOrDefault();
+                this.StatusValueSpecified = value.HasValue;
+            }
+        }
         
         [System.ComponentModel.DataAnnotations.RequiredAttribute()]
         [System.Xml.Serialization.XmlElementAttribute("stock")]

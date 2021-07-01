@@ -48,6 +48,7 @@ xscgen \
     --namespace "|identities.xsd=Availability" \
     --pascal \
     --separateFiles \
+    --nullable \
     --collectionSettersMode Public \
     --collectionType=System.Collections.Generic.List\`1 \
     --output=$OUT \
