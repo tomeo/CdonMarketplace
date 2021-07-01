@@ -42,6 +42,12 @@ namespace CdonMarketplace.Price
         [System.Xml.Serialization.XmlEnumAttribute("199")]
         Item199,
         
+        [System.Xml.Serialization.XmlEnumAttribute("285")]
+        Item285,
+        
+        [System.Xml.Serialization.XmlEnumAttribute("385")]
+        Item385,
+        
         [System.Xml.Serialization.XmlEnumAttribute("399")]
         Item399,
         

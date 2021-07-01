@@ -52,5 +52,37 @@ namespace CdonMarketplace.Price
         [System.ComponentModel.DataAnnotations.RequiredAttribute()]
         [System.Xml.Serialization.XmlElementAttribute("originalPrice")]
         public decimal OriginalPrice { get; set; }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlElementAttribute("isShippedFromEU")]
+        public bool IsShippedFromEUValue { get; set; }
+        
+        /// <summary>
+        /// <para xml:lang="en">Gets or sets a value indicating whether the IsShippedFromEU property is specified.</para>
+        /// </summary>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        public bool IsShippedFromEUValueSpecified { get; set; }
+        
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public System.Nullable<bool> IsShippedFromEU
+        {
+            get
+            {
+                if (this.IsShippedFromEUValueSpecified)
+                {
+                    return this.IsShippedFromEUValue;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            set
+            {
+                this.IsShippedFromEUValue = value.GetValueOrDefault();
+                this.IsShippedFromEUValueSpecified = value.HasValue;
+            }
+        }
     }
 }

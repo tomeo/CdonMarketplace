@@ -48,6 +48,12 @@ namespace CdonMarketplace.Price
         [System.Xml.Serialization.XmlEnumAttribute("19.5")]
         Item19Period5,
         
+        [System.Xml.Serialization.XmlEnumAttribute("29")]
+        Item29,
+        
+        [System.Xml.Serialization.XmlEnumAttribute("39")]
+        Item39,
+        
         [System.Xml.Serialization.XmlEnumAttribute("39.5")]
         Item39Period5,
         

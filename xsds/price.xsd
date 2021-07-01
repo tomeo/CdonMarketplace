@@ -45,11 +45,13 @@
                 <xs:enumeration value="99" />
                 <xs:enumeration value="199" />
                 <xs:enumeration value="249" />
+			          <xs:enumeration value="295" />
                 <xs:enumeration value="299" />
                 <xs:enumeration value="395" />
                 <xs:enumeration value="495" />
                 <xs:enumeration value="499" />
                 <xs:enumeration value="995" />
+				        <xs:enumeration value="1195" />
                 <xs:enumeration value="1499" />
                 <xs:enumeration value="3499" />
               </xs:restriction>
@@ -77,7 +79,9 @@
                 <xs:enumeration value="79" />
                 <xs:enumeration value="99" />
                 <xs:enumeration value="199" />
+				        <xs:enumeration value="200" />
                 <xs:enumeration value="299" />
+				        <xs:enumeration value="300" />
                 <xs:enumeration value="495" />
                 <xs:enumeration value="995" />
               </xs:restriction>
@@ -104,6 +108,8 @@
                 <xs:enumeration value="79" />
                 <xs:enumeration value="99" />
                 <xs:enumeration value="199" />
+				        <xs:enumeration value="285" />
+				        <xs:enumeration value="385" />
                 <xs:enumeration value="399" />
                 <xs:enumeration value="799" />
                 <xs:enumeration value="995" />
@@ -133,6 +139,8 @@
                 <xs:enumeration value="7.95" />
                 <xs:enumeration value="9.95" />
                 <xs:enumeration value="19.5" />
+			          <xs:enumeration value="29" />
+				        <xs:enumeration value="39" />
                 <xs:enumeration value="39.5" />
                 <xs:enumeration value="59" />
                 <xs:enumeration value="79" />
@@ -178,6 +186,7 @@
     <xs:sequence>
       <xs:element name="salePrice" type="money" minOccurs="1" maxOccurs="1" />
       <xs:element name="originalPrice" type="money" minOccurs="1" maxOccurs="1" />
+	  <xs:element name="isShippedFromEU" type="xs:boolean" minOccurs="0" maxOccurs="1" />
     </xs:sequence>
   </xs:complexType>
 

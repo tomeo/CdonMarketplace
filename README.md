@@ -110,6 +110,7 @@ var price = new CdonMarketplace.Price.Product
     {
         OriginalPrice = 1337,
         SalePrice = 999,
+        IsShippedFromEU = true,
         ShippingCost = MarketSEShippingCost.Item0,
         Vat = 25,
     },
@@ -117,6 +118,7 @@ var price = new CdonMarketplace.Price.Product
     {
         OriginalPrice = 1337,
         SalePrice = 999,
+        IsShippedFromEU = true,
         ShippingCost = MarketDKShippingCost.Item0,
         Vat = 25,
     },
@@ -140,11 +142,13 @@ Shipping costs are set per variant and per channel. The shipping cost has to be 
 | Item99               | 99 SEK   |
 | Item199              | 199 SEK  |
 | Item249              | 249 SEK  |
+| Item295              | 295 SEK  |
 | Item299              | 299 SEK  |
 | Item395              | 395 SEK  |
 | Item495              | 495 SEK  |
 | Item499              | 499 SEK  |
 | Item995              | 995 SEK  |
+| Item1195             | 1195 SEK |
 | Item1499             | 1499 SEK |
 | Item3499             | 3499 SEK |
 
@@ -159,7 +163,9 @@ Shipping costs are set per variant and per channel. The shipping cost has to be 
 | Item79               | 79 DKK  |
 | Item99               | 99 DKK  |
 | Item199              | 199 DKK |
+| Item200              | 200 DKK |
 | Item299              | 299 DKK |
+| Item300              | 300 DKK |
 | Item495              | 495 DKK |
 | Item995              | 995 DKK |
 
@@ -173,7 +179,9 @@ Shipping costs are set per variant and per channel. The shipping cost has to be 
 | Item79               | 79 NOK  |
 | Item99               | 99 NOK  |
 | Item199              | 199 NOK |
-| Item299              | 399 NOK |
+| Item285              | 285 NOK |
+| Item385              | 385 NOK |
+| Item399              | 399 NOK |
 | Item495              | 799 NOK |
 | Item995              | 995 NOK |
 
@@ -189,6 +197,8 @@ Shipping costs are set per variant and per channel. The shipping cost has to be 
 | Item7Period95        | 7.95 EUR  |
 | Item9Period95        | 9.95 EUR  |
 | Item19Period5        | 19.95 EUR |
+| Item29               | 29 EUR    |
+| Item39               | 39 EUR    |
 | Item39Period5        | 39.5 EUR  |
 | Item59               | 59 EUR    |
 | Item79               | 79 EUR    |

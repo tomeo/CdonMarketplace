@@ -34,6 +34,7 @@ xscgen \
     --namespace "|identities.xsd=Price" \
     --pascal \
     --separateFiles \
+    --nullable \
     --collectionSettersMode Public \
     --collectionType=System.Collections.Generic.List\`1 \
     --output=$OUT \

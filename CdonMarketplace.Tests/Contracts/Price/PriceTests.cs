@@ -21,6 +21,7 @@ namespace CdonMarketplace.Tests.Contracts.Price
                         {
                             OriginalPrice = 1337,
                             SalePrice = 999,
+                            IsShippedFromEU = true,
                             ShippingCost = MarketSEShippingCost.Item0,
                             Vat = 25,
                         },
@@ -37,7 +38,7 @@ namespace CdonMarketplace.Tests.Contracts.Price
 
             var xml = XmlUtils.SerializeXml(marketplace);
             const string expected =
-                "<?xml version=\"1.0\" encoding=\"utf-8\"?><marketplace xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns=\"https://schemas.cdon.com/product/4.0/4.9.0/price\"><product><id>your_sku</id><se><salePrice>999</salePrice><originalPrice>1337</originalPrice><shippingCost>0</shippingCost><vat>25</vat></se><dk><salePrice>999</salePrice><originalPrice>1337</originalPrice><shippingCost>0</shippingCost><vat>25</vat></dk></product></marketplace>";
+                "<?xml version=\"1.0\" encoding=\"utf-8\"?><marketplace xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns=\"https://schemas.cdon.com/product/4.0/4.9.0/price\"><product><id>your_sku</id><se><salePrice>999</salePrice><originalPrice>1337</originalPrice><isShippedFromEU>true</isShippedFromEU><shippingCost>0</shippingCost><vat>25</vat></se><dk><salePrice>999</salePrice><originalPrice>1337</originalPrice><shippingCost>0</shippingCost><vat>25</vat></dk></product></marketplace>";
                 Assert.Equal(expected, xml);
         }
     }
