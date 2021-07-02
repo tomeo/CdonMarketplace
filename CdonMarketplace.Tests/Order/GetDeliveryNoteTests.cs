@@ -8,7 +8,8 @@ namespace CdonMarketplace.Tests.Order
 {
     public class GetDeliveryNoteTests
     {
-        [Fact(Skip = "Not a real unit test")]
+        //[Fact(Skip = "Not a real unit test")]
+        [Fact]
         public async Task ShouldGetAllOrderReturnAddresses()
         {
             var env = LaunchSettingsProvider.GetEnvironmentalVariables();
@@ -16,7 +17,7 @@ namespace CdonMarketplace.Tests.Order
             var request = new OrderDeliveryNote
             {
                 AddressId = env["CDON_RETURN_ADDRESS_ID"],
-                OrderId = env["GETORDER_ORDERID"],
+                OrderId = int.Parse(env["GETORDER_ORDERID"]),
                 DeliveryNoteRows = new[]
                 {
                     new OrderDeliveryNoteRow
