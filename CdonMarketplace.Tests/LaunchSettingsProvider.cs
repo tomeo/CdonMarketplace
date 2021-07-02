@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
+﻿using System.Collections.Generic;
 using System.Reflection;
 using Newtonsoft.Json.Linq;
 
@@ -8,17 +6,9 @@ namespace CdonMarketplace.Tests
 {
     public static class LaunchSettingsProvider
     {
-        private static string ProjectDirectory() => Directory.GetParent(AppDomain.CurrentDomain.BaseDirectory)
-            ?.Parent?.Parent?.Parent?.FullName;
-
         public static IReadOnlyDictionary<string, string> GetEnvironmentalVariables()
         {
-            var path = Path.Combine(
-                ProjectDirectory() ?? string.Empty,
-                "Properties/launchSettings.json"
-            );
-
-            var launchSettings = File.ReadAllText(path);
+            var launchSettings = ProjectFileProvider.ReadAllText("Properties/launchSettings.json");
 
             var projectName = Assembly.GetCallingAssembly().GetName().Name ?? string.Empty;
             var attributes = JObject.Parse(launchSettings)

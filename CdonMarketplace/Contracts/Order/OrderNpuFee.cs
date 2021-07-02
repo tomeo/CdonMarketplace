@@ -1,8 +1,8 @@
 ﻿namespace CdonMarketplace.Contracts.Order
 {
-    public class OrderCancel
+    public class OrderNpuFee
     {
         public int OrderId { get; set; }
-        public OrderCancelRow[] Rows { get; set; }
+        public OrderNpuFeeRow[] Products { get; set; }
     }
 }

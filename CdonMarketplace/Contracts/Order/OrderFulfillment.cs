@@ -2,7 +2,7 @@
 {
     public class OrderFulfillment
     {
-        public int? OrderId { get; set; }
+        public int OrderId { get; set; }
         public OrderFulfillmentRow[] Products { get; set; }
     }
 }

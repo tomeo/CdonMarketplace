@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -57,36 +58,47 @@ namespace CdonMarketplace.Clients
             return pendingOrders;
         }
 
-        public async Task<Order> GetOrder(int orderId)
-        {
-            var response = await _client.GetAsync($"/api/order/{orderId}");
-            response.EnsureSuccessStatusCode();
-            return JsonConvert.DeserializeObject<Order>(
-                await response.Content.ReadAsStringAsync());
-        }
+        public async Task<Order> GetOrder(int orderId) => 
+            await _client.GetAsync<Order>($"/api/order/{orderId}");
 
-        public async Task<Order> FulfillOrderRows(OrderFulfillment orderFulfillment)
-        {
-            var response = await _client.PostJson("api/orderdelivery", orderFulfillment);
-            response.EnsureSuccessStatusCode();
-            return JsonConvert.DeserializeObject<Order>(
-                await response.Content.ReadAsStringAsync());
-        }
+        public async Task<Order> FulfillOrderRows(OrderFulfillment orderFulfillment) =>
+            await _client.PostAsync<Order>("api/orderdelivery", orderFulfillment);
 
-        public async Task<Order> ReturnOrderRows(OrderReturn orderReturn)
-        {
-            var response = await _client.PostJson("api/orderreturn", orderReturn);
-            response.EnsureSuccessStatusCode();
-            return JsonConvert.DeserializeObject<Order>(
-                await response.Content.ReadAsStringAsync());
-        }
+        public async Task<Order> ReturnOrderRows(OrderReturn orderReturn) =>
+            await _client.PostAsync<Order>("api/orderreturn", orderReturn);
 
-        public async Task<Order> CancelOrderRows(OrderCancel orderCancel)
+        public async Task<Order> CancelOrderRows(OrderCancel orderCancel) =>
+            await _client.PostAsync<Order>("api/ordercancel", orderCancel);
+
+        public async Task<Order> WritedownOrderRows(OrderWritedown orderWritedown) =>
+            await _client.PostAsync<Order>("api/orderwritedown", orderWritedown);
+
+        public async Task<Order> PackageOrderRows(OrderPackage orderPackage) =>
+            await _client.PostAsync<Order>("api/orderpackage", orderPackage);
+
+        public async Task<Order> PickOrderRows(OrderPicking orderPicking) =>
+            await _client.PostAsync<Order>("api/orderpicking", orderPicking);
+
+        public async Task<Order> ShipOrderRows(OrderShipping orderShipping) =>
+            await _client.PostAsync<Order>("api/ordershipping", orderShipping);
+
+        public async Task<Order> ChargeNpuFee(OrderNpuFee orderNpuFee) =>
+            await _client.PostAsync<Order>("api/npu/chargenpufee", orderNpuFee);
+
+        public async Task<Order> RetractNpuFee(int orderId) =>
+            await _client.PostAsync<Order>($"api/npu/retractnpufee/{orderId}", null);
+
+        public async Task<IEnumerable<PackageCarrier>> GetPackageCarriers() =>
+            await _client.GetAsync<PackageCarrier[]>("api/packagecarrier");
+
+        public async Task<IEnumerable<OrderReturnAddress>> GetOrderReturnAddresses() =>
+            await _client.GetAsync<OrderReturnAddress[]>("api/returnaddress");
+
+        public async Task<Stream> GetDeliveryNote(OrderDeliveryNote orderDeliveryNote)
         {
-            var response = await _client.PostJson("api/ordercancel", orderCancel);
+            var response = await _client.PostJsonAsync("api/deliverynote", orderDeliveryNote);
             response.EnsureSuccessStatusCode();
-            return JsonConvert.DeserializeObject<Order>(
-                await response.Content.ReadAsStringAsync());
+            return await response.Content.ReadAsStreamAsync();
         }
     }
 }

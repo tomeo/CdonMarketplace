@@ -13,7 +13,7 @@
         public int InvoicedQuantity { get; set; }
         public int CancelledQuantity { get; set; }
         public int ReturnedQuantity { get; set; }
-        public int? PickedQuantity { get; set; }
+        public int PickedQuantity { get; set; }
         public decimal PricePerUnit { get; set; }
         public decimal OrdinaryPricePerUnit { get; set; }
         public decimal VatPerUnit { get; set; }
