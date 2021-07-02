@@ -1,7 +1,7 @@
 # CDON Marketplace
 
 ```
-Install-Package CdonMarketplace -Version 2.0.0-alpha5
+Install-Package CdonMarketplace -Version 2.0.0-alpha6
 ```
 
 ## Product API

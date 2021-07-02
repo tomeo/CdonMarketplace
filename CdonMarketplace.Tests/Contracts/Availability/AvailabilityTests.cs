@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Threading.Tasks;
 using CdonMarketplace.Availability;
 using CdonMarketplace.Utils;
 using Xunit;
@@ -9,7 +8,7 @@ namespace CdonMarketplace.Tests.Contracts.Availability
     public class AvailabilityTests
     {
         [Fact]
-        public async Task ShouldSerializeProduct()
+        public void ShouldSerializeProduct()
         {
             var marketplace = new Marketplace
             {
