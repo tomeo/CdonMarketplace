@@ -96,8 +96,19 @@ namespace CdonMarketplace.Clients
 
         public async Task<Stream> GetDeliveryNote(OrderDeliveryNote orderDeliveryNote)
         {
-            var response = await _client.PostJsonAsync("api/deliverynote", orderDeliveryNote);
-            response.EnsureSuccessStatusCode();
+            const string url = "api/deliverynote";
+            var response = await _client.PostJsonAsync(url, orderDeliveryNote);
+
+            if (!response.IsSuccessStatusCode)
+            {
+                throw new ApiException
+                (
+                    (int)response.StatusCode,
+                    null,
+                    $"{_client.BaseAddress}/{url}"
+                );
+            }
+
             return await response.Content.ReadAsStreamAsync();
         }
     }

@@ -1,5 +1,7 @@
+using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
+using CdonMarketplace.Contracts.Product;
 using CdonMarketplace.Utils;
 
 namespace CdonMarketplace.Clients
@@ -17,6 +19,20 @@ namespace CdonMarketplace.Clients
         public async Task<Receipt> UploadPrice(Price.Marketplace prices) => await DoRequest(prices, "price");
         public async Task<Receipt> UploadMedia(Media.Marketplace media) => await DoRequest(media, "media");
         public async Task<Receipt> UploadAvailability(Availability.Marketplace availability) => await DoRequest(availability, "availability");
+        public Task<IEnumerable<Delivery>> GetDeliveries(int take = 100)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public Task<Delivery> GetDelivery(string receiptId)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public Task<IEnumerable<DeliveryFailure>> GetDeliveryFailures(string receiptId)
+        {
+            throw new System.NotImplementedException();
+        }
 
         private async Task<Receipt> DoRequest<T>(T content, string filename)
         {

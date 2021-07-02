@@ -1,20 +1,17 @@
 using System;
+using System.Collections.Generic;
 using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
+using CdonMarketplace.Contracts.Product;
 using CdonMarketplace.Utils;
+using CdonMarketplace.Extensions;
 
 namespace CdonMarketplace.Clients
 {
-    public class Receipt
-    {
-        public string ReceiptId { get; set; }
-        public string StatusUrl { get; set; }
-    }
-
     public class ProductApiClient : IProductApiClient
     {
         private readonly HttpClient _client;
@@ -55,11 +52,26 @@ namespace CdonMarketplace.Clients
                 (
                     (int)response.StatusCode,
                     responseContent,
-                    $"/{endpoint}"
+                    $"{_client.BaseAddress}/{endpoint}"
                 );
             }
 
             return JsonSerializer.Deserialize<Receipt>(responseContent, DeserializeOptions);
+        }
+
+        public async Task<IEnumerable<Delivery>> GetDeliveries(int take = 100)
+        {
+            return await _client.GetAsync<Delivery[]>($"/deliveries?take={take}");
+        }
+
+        public async Task<Delivery> GetDelivery(string receiptId)
+        {
+            return await _client.GetAsync<Delivery>($"/deliveries/{receiptId}");
+        }
+
+        public async Task<IEnumerable<DeliveryFailure>> GetDeliveryFailures(string receiptId)
+        {
+            return await _client.GetAsync<DeliveryFailure[]>($"/deliveries/{receiptId}/failures");
         }
     }
 }
