@@ -3,6 +3,6 @@
     public class Order
     {
         public OrderDetails OrderDetails { get; set; }
-        public string[] Invoices { get; set; }
+        public Invoice[] Invoices { get; set; }
     }
 }
