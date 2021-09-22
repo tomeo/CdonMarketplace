@@ -9,6 +9,8 @@
   <xs:simpleType name="dimensionValue">
     <xs:restriction base="nonNegativeDecimal">
       <xs:fractionDigits value="3" />
+      <xs:minInclusive value="0"/>
+      <xs:maxInclusive value="2147483647"/>
     </xs:restriction>
   </xs:simpleType>
 
