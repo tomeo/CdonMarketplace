@@ -22,7 +22,10 @@ namespace CdonMarketplace.Product
         
         /// <summary>
         /// <para xml:lang="en">Total number of digits in fraction: 3.</para>
+        /// <para xml:lang="en">Minimum inclusive value: 0.</para>
+        /// <para xml:lang="en">Maximum inclusive value: 2147483647.</para>
         /// </summary>
+        [System.ComponentModel.DataAnnotations.RangeAttribute(typeof(decimal), "0", "2147483647")]
         [System.ComponentModel.DataAnnotations.RequiredAttribute()]
         [System.Xml.Serialization.XmlElementAttribute("value")]
         public decimal Value { get; set; }

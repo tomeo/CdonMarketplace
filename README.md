@@ -179,6 +179,7 @@ Shipping costs are set per variant and per channel. The shipping cost has to be 
 | Item79               | 79 NOK  |
 | Item99               | 99 NOK  |
 | Item199              | 199 NOK |
+| Item239              | 239 NOK |
 | Item285              | 285 NOK |
 | Item385              | 385 NOK |
 | Item399              | 399 NOK |
@@ -196,6 +197,7 @@ Shipping costs are set per variant and per channel. The shipping cost has to be 
 | Item5Period95        | 5.95 EUR  |
 | Item7Period95        | 7.95 EUR  |
 | Item9Period95        | 9.95 EUR  |
+| Item12Period95       | 12.95 EUR |
 | Item19Period5        | 19.95 EUR |
 | Item29               | 29 EUR    |
 | Item39               | 39 EUR    |

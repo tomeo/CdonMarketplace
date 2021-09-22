@@ -7,9 +7,9 @@
   <xs:include schemaLocation="types.xsd" />
 
   <xs:simpleType name="id">
-    <xs:restriction base="xs:token">
-      <xs:pattern value="[a-zA-Z0-9åäöÅÄÖ\s\/_.-]{1,40}" />
-    </xs:restriction>
+	  <xs:restriction base="xs:token">
+		  <xs:pattern value="[a-zA-Z0-9åäöÅÄÖ\s\/_.-]{1,40}" />
+	  </xs:restriction>
   </xs:simpleType>
 
   <xs:simpleType name="gtin">
