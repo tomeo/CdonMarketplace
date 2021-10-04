@@ -14,7 +14,7 @@ namespace CdonMarketplace.Product
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "2.0.521.0")]
     [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute("title", Namespace="https://schemas.cdon.com/product/4.0/4.9.0/product")]
+    [System.Xml.Serialization.XmlTypeAttribute("title", Namespace="https://schemas.cdon.com/product/4.0/4.11.0/product")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class Title
@@ -72,7 +72,7 @@ namespace CdonMarketplace.Product
         /// </summary>
         [System.ComponentModel.DataAnnotations.MinLengthAttribute(1)]
         [System.ComponentModel.DataAnnotations.MaxLengthAttribute(150)]
-        [System.Xml.Serialization.XmlElementAttribute("fr")]
-        public string Fr { get; set; }
+        [System.Xml.Serialization.XmlElementAttribute("en")]
+        public string En { get; set; }
     }
 }

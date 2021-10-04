@@ -14,7 +14,7 @@ namespace CdonMarketplace.Price
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "2.0.521.0")]
     [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute("product", Namespace="https://schemas.cdon.com/product/4.0/4.9.0/price")]
+    [System.Xml.Serialization.XmlTypeAttribute("product", Namespace="https://schemas.cdon.com/product/4.0/4.11.0/price")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class Product
@@ -39,9 +39,6 @@ namespace CdonMarketplace.Price
         
         [System.Xml.Serialization.XmlElementAttribute("fi")]
         public MarketFI Fi { get; set; }
-        
-        [System.Xml.Serialization.XmlElementAttribute("rakuten_fr")]
-        public MarketRakutenFr Rakuten_Fr { get; set; }
         
         [System.Xml.Serialization.XmlElementAttribute("b2b_se")]
         public MarketB2BSE B2B_Se { get; set; }

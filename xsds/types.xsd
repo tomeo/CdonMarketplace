@@ -1,8 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
+
 <xs:schema
-    attributeFormDefault="unqualified"
-    elementFormDefault="qualified"
-    xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  attributeFormDefault="unqualified"
+  elementFormDefault="qualified"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
   <xs:simpleType name="stringNotNull">
     <xs:restriction base="xs:token">
@@ -20,6 +21,12 @@
   <xs:simpleType name="url">
     <xs:restriction base="xs:anyURI">
       <xs:minLength value="1" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="nonNegativeInt" id="nonNegativeInt">
+    <xs:restriction base="xs:int">
+      <xs:minInclusive value="0" />
     </xs:restriction>
   </xs:simpleType>
 

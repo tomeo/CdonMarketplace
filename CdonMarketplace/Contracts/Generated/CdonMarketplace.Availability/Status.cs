@@ -14,7 +14,7 @@ namespace CdonMarketplace.Availability
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "2.0.521.0")]
     [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute("status", Namespace="https://schemas.cdon.com/product/4.0/4.9.0/availability")]
+    [System.Xml.Serialization.XmlTypeAttribute("status", Namespace="https://schemas.cdon.com/product/4.0/4.11.0/availability")]
     public enum Status
     {
         

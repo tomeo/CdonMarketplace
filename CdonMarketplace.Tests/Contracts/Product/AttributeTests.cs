@@ -27,8 +27,8 @@ namespace CdonMarketplace.Tests.Contracts.Product
             };
 
         var xml = XmlUtils.SerializeXml(marketplace);
-        const string expected =
-            "<?xml version=\"1.0\" encoding=\"utf-8\"?><marketplace xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns=\"https://schemas.cdon.com/product/4.0/4.9.0/product\"><product><category><attributes><name>value</name></attributes></category></product></marketplace>";
+        var expected =
+            $"<?xml version=\"1.0\" encoding=\"utf-8\"?><marketplace xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns=\"https://schemas.cdon.com/product/4.0/{ApiVersion.Product()}/product\"><product><category><attributes><name>value</name></attributes></category></product></marketplace>";
 
             Assert.Equal(expected, xml);
         }

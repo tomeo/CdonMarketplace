@@ -30,6 +30,7 @@ The CDONMarketplace Nuget package versions follow [Semantic Versioning](https://
 | CDONMarketplace Nuget Package version | Order API-version | Product API-version |
 | ------------------------------------- | ----------------- | ------------------- |
 | 2.0.0                                 | 1.0               | 4.9.0               |
+| 3.0.0                                 | 1.0               | 4.11.0              |
 
 # Documentation
 

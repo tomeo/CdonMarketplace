@@ -1,8 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
+
 <xs:schema
-    attributeFormDefault="unqualified"
-    elementFormDefault="qualified"
-    xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  attributeFormDefault="unqualified"
+  elementFormDefault="qualified"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
   <xs:include schemaLocation="identities.xsd" />
   <xs:include schemaLocation="types.xsd" />
@@ -46,7 +47,7 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="1" maxOccurs="1" name="identity" type="identity" />
-        <xs:element minOccurs="1" maxOccurs="1" name="flavor" type="untranslatable" />
+        <xs:element minOccurs="1" maxOccurs="1" name="flavor" type="translatable" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -66,7 +67,7 @@
       <xs:sequence>
         <xs:element minOccurs="1" maxOccurs="1" name="identity" type="identity" />
         <xs:element minOccurs="1" maxOccurs="1" name="size" type="untranslatable" />
-        <xs:element minOccurs="1" maxOccurs="1" name="flavor" type="untranslatable" />
+        <xs:element minOccurs="1" maxOccurs="1" name="flavor" type="translatable" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

@@ -13,13 +13,13 @@ namespace CdonMarketplace.Availability
     
     
     /// <summary>
-    /// <para>If selling digital products or services, set stock to a very high number to not run out of sellable products.</para>
+    /// <para>If selling digital products or services, set stock to a very high number (less than 2147483647) to not run out of sellable products.</para>
     /// </summary>
-    [System.ComponentModel.DescriptionAttribute("If selling digital products or services, set stock to a very high number to not r" +
-        "un out of sellable products.")]
+    [System.ComponentModel.DescriptionAttribute("If selling digital products or services, set stock to a very high number (less th" +
+        "an 2147483647) to not run out of sellable products.")]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "2.0.521.0")]
     [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute("product", Namespace="https://schemas.cdon.com/product/4.0/4.9.0/availability")]
+    [System.Xml.Serialization.XmlTypeAttribute("product", Namespace="https://schemas.cdon.com/product/4.0/4.11.0/availability")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class Product
@@ -65,9 +65,12 @@ namespace CdonMarketplace.Availability
             }
         }
         
+        /// <summary>
+        /// <para xml:lang="en">Minimum inclusive value: 0.</para>
+        /// </summary>
         [System.ComponentModel.DataAnnotations.RequiredAttribute()]
         [System.Xml.Serialization.XmlElementAttribute("stock")]
-        public string Stock { get; set; }
+        public int Stock { get; set; }
         
         [System.Xml.Serialization.XmlElementAttribute("se")]
         public MarketSE Se { get; set; }
@@ -83,8 +86,5 @@ namespace CdonMarketplace.Availability
         
         [System.Xml.Serialization.XmlElementAttribute("b2b_se")]
         public MarketB2BSE B2B_Se { get; set; }
-        
-        [System.Xml.Serialization.XmlElementAttribute("rakuten_fr")]
-        public MarketRakutenFR Rakuten_Fr { get; set; }
     }
 }

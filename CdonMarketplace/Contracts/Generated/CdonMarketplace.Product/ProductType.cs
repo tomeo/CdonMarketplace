@@ -12,66 +12,61 @@ namespace CdonMarketplace.Product
 {
     
     
+    /// <summary>
+    /// <para>The full category path as described by your own product categorization system in the specified language.</para>
+    /// </summary>
+    [System.ComponentModel.DescriptionAttribute("The full category path as described by your own product categorization system in " +
+        "the specified language.")]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "2.0.521.0")]
     [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute("uspValue", Namespace="https://schemas.cdon.com/product/4.0/4.11.0/product")]
+    [System.Xml.Serialization.XmlTypeAttribute("productType", Namespace="https://schemas.cdon.com/product/4.0/4.11.0/product")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class UspValue
+    public partial class ProductType
     {
         
         /// <summary>
         /// <para xml:lang="en">Minimum length: 1.</para>
-        /// <para xml:lang="en">Maximum length: 50.</para>
+        /// <para xml:lang="en">Maximum length: 750.</para>
         /// </summary>
         [System.ComponentModel.DataAnnotations.MinLengthAttribute(1)]
-        [System.ComponentModel.DataAnnotations.MaxLengthAttribute(50)]
-        [System.ComponentModel.DataAnnotations.RequiredAttribute()]
-        [System.Xml.Serialization.XmlElementAttribute("default")]
-        public string Default { get; set; }
-        
-        /// <summary>
-        /// <para xml:lang="en">Minimum length: 1.</para>
-        /// <para xml:lang="en">Maximum length: 50.</para>
-        /// </summary>
-        [System.ComponentModel.DataAnnotations.MinLengthAttribute(1)]
-        [System.ComponentModel.DataAnnotations.MaxLengthAttribute(50)]
+        [System.ComponentModel.DataAnnotations.MaxLengthAttribute(750)]
         [System.Xml.Serialization.XmlElementAttribute("se")]
         public string Se { get; set; }
         
         /// <summary>
         /// <para xml:lang="en">Minimum length: 1.</para>
-        /// <para xml:lang="en">Maximum length: 50.</para>
+        /// <para xml:lang="en">Maximum length: 750.</para>
         /// </summary>
         [System.ComponentModel.DataAnnotations.MinLengthAttribute(1)]
-        [System.ComponentModel.DataAnnotations.MaxLengthAttribute(50)]
+        [System.ComponentModel.DataAnnotations.MaxLengthAttribute(750)]
         [System.Xml.Serialization.XmlElementAttribute("dk")]
         public string Dk { get; set; }
         
         /// <summary>
         /// <para xml:lang="en">Minimum length: 1.</para>
-        /// <para xml:lang="en">Maximum length: 50.</para>
+        /// <para xml:lang="en">Maximum length: 750.</para>
         /// </summary>
         [System.ComponentModel.DataAnnotations.MinLengthAttribute(1)]
-        [System.ComponentModel.DataAnnotations.MaxLengthAttribute(50)]
+        [System.ComponentModel.DataAnnotations.MaxLengthAttribute(750)]
         [System.Xml.Serialization.XmlElementAttribute("no")]
         public string No { get; set; }
         
         /// <summary>
         /// <para xml:lang="en">Minimum length: 1.</para>
-        /// <para xml:lang="en">Maximum length: 50.</para>
+        /// <para xml:lang="en">Maximum length: 750.</para>
         /// </summary>
         [System.ComponentModel.DataAnnotations.MinLengthAttribute(1)]
-        [System.ComponentModel.DataAnnotations.MaxLengthAttribute(50)]
+        [System.ComponentModel.DataAnnotations.MaxLengthAttribute(750)]
         [System.Xml.Serialization.XmlElementAttribute("fi")]
         public string Fi { get; set; }
         
         /// <summary>
         /// <para xml:lang="en">Minimum length: 1.</para>
-        /// <para xml:lang="en">Maximum length: 50.</para>
+        /// <para xml:lang="en">Maximum length: 750.</para>
         /// </summary>
         [System.ComponentModel.DataAnnotations.MinLengthAttribute(1)]
-        [System.ComponentModel.DataAnnotations.MaxLengthAttribute(50)]
+        [System.ComponentModel.DataAnnotations.MaxLengthAttribute(750)]
         [System.Xml.Serialization.XmlElementAttribute("en")]
         public string En { get; set; }
     }

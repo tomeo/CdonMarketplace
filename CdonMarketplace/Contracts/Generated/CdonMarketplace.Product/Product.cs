@@ -14,7 +14,7 @@ namespace CdonMarketplace.Product
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "2.0.521.0")]
     [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute("product", Namespace="https://schemas.cdon.com/product/4.0/4.9.0/product")]
+    [System.Xml.Serialization.XmlTypeAttribute("product", Namespace="https://schemas.cdon.com/product/4.0/4.11.0/product")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class Product
@@ -42,6 +42,7 @@ namespace CdonMarketplace.Product
         /// </summary>
         [System.ComponentModel.DataAnnotations.MinLengthAttribute(1)]
         [System.ComponentModel.DataAnnotations.MaxLengthAttribute(70)]
+        [System.ComponentModel.DataAnnotations.RequiredAttribute()]
         [System.Xml.Serialization.XmlElementAttribute("brand")]
         public string Brand { get; set; }
         
@@ -49,7 +50,7 @@ namespace CdonMarketplace.Product
         private System.Collections.Generic.List<UspValue> _usp;
         
         [System.Xml.Serialization.XmlArrayAttribute("usp")]
-        [System.Xml.Serialization.XmlArrayItemAttribute("value", Namespace="https://schemas.cdon.com/product/4.0/4.9.0/product")]
+        [System.Xml.Serialization.XmlArrayItemAttribute("value", Namespace="https://schemas.cdon.com/product/4.0/4.11.0/product")]
         public System.Collections.Generic.List<UspValue> Usp
         {
             get
@@ -223,6 +224,12 @@ namespace CdonMarketplace.Product
                 this.IsPreOwnedValueSpecified = value.HasValue;
             }
         }
+        
+        [System.Xml.Serialization.XmlElementAttribute("link")]
+        public Link Link { get; set; }
+        
+        [System.Xml.Serialization.XmlElementAttribute("productType")]
+        public ProductType ProductType { get; set; }
         
         [System.Xml.Serialization.XmlElementAttribute("variants")]
         public CdonMarketplace.Product.Variants Variants { get; set; }

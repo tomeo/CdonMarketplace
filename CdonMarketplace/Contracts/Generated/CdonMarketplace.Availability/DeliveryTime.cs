@@ -14,18 +14,24 @@ namespace CdonMarketplace.Availability
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "2.0.521.0")]
     [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute("deliveryTime", Namespace="https://schemas.cdon.com/product/4.0/4.9.0/availability")]
+    [System.Xml.Serialization.XmlTypeAttribute("deliveryTime", Namespace="https://schemas.cdon.com/product/4.0/4.11.0/availability")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class DeliveryTime
     {
         
+        /// <summary>
+        /// <para xml:lang="en">Minimum inclusive value: 0.</para>
+        /// </summary>
         [System.ComponentModel.DataAnnotations.RequiredAttribute()]
         [System.Xml.Serialization.XmlElementAttribute("min")]
-        public string Min { get; set; }
+        public int Min { get; set; }
         
+        /// <summary>
+        /// <para xml:lang="en">Minimum inclusive value: 0.</para>
+        /// </summary>
         [System.ComponentModel.DataAnnotations.RequiredAttribute()]
         [System.Xml.Serialization.XmlElementAttribute("max")]
-        public string Max { get; set; }
+        public int Max { get; set; }
     }
 }

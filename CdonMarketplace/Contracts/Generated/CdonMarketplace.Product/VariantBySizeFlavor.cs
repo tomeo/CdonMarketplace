@@ -14,10 +14,10 @@ namespace CdonMarketplace.Product
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "2.0.521.0")]
     [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute("variantBySizeFlavor", Namespace="https://schemas.cdon.com/product/4.0/4.9.0/product", AnonymousType=true)]
+    [System.Xml.Serialization.XmlTypeAttribute("variantBySizeFlavor", Namespace="https://schemas.cdon.com/product/4.0/4.11.0/product", AnonymousType=true)]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlRootAttribute("variantBySizeFlavor", Namespace="https://schemas.cdon.com/product/4.0/4.9.0/product")]
+    [System.Xml.Serialization.XmlRootAttribute("variantBySizeFlavor", Namespace="https://schemas.cdon.com/product/4.0/4.11.0/product")]
     public partial class VariantBySizeFlavor
     {
         
@@ -31,6 +31,6 @@ namespace CdonMarketplace.Product
         
         [System.ComponentModel.DataAnnotations.RequiredAttribute()]
         [System.Xml.Serialization.XmlElementAttribute("flavor")]
-        public Untranslatable Flavor { get; set; }
+        public Translatable Flavor { get; set; }
     }
 }

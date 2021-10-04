@@ -19,14 +19,13 @@ namespace CdonMarketplace.Price
         "vat\"-elements.")]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "2.0.521.0")]
     [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute("market", Namespace="https://schemas.cdon.com/product/4.0/4.9.0/price")]
+    [System.Xml.Serialization.XmlTypeAttribute("market", Namespace="https://schemas.cdon.com/product/4.0/4.11.0/price")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(MarketB2BSE))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(MarketDK))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(MarketFI))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(MarketNO))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(MarketRakutenFr))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(MarketSE))]
     public abstract partial class Market
     {

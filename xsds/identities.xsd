@@ -1,15 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
+
 <xs:schema
-    attributeFormDefault="unqualified"
-    elementFormDefault="qualified"
-    xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  attributeFormDefault="unqualified"
+  elementFormDefault="qualified"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
   <xs:include schemaLocation="types.xsd" />
 
   <xs:simpleType name="id">
-	  <xs:restriction base="xs:token">
-		  <xs:pattern value="[a-zA-Z0-9åäöÅÄÖ\s\/_.-]{1,40}" />
-	  </xs:restriction>
+    <xs:restriction base="xs:token">
+      <xs:pattern value="[a-zA-Z0-9åäöÅÄÖ\s\/_.-]{1,40}" />
+    </xs:restriction>
   </xs:simpleType>
 
   <xs:simpleType name="gtin">
