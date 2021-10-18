@@ -1,7 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
-using CdonMarketplace.Clients;
-using CdonMarketplace.Product;
+﻿using System.Threading.Tasks;
 using Xunit;
 
 namespace CdonMarketplace.Tests.Contracts.Delivery
