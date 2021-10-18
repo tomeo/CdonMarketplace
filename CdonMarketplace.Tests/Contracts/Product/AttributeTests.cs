@@ -34,8 +34,8 @@ namespace CdonMarketplace.Tests.Contracts.Product
         }
 
         private static XmlElement CreateAttribute(string name, string value)
-        {
-	        var doc = new XmlDocument();
+        { 
+            var doc = new XmlDocument();
             var element = doc.CreateElement(name);
             element.InnerText = value;
             return element;
