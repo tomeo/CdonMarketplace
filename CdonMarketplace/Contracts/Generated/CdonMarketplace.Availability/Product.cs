@@ -13,10 +13,10 @@ namespace CdonMarketplace.Availability
     
     
     /// <summary>
-    /// <para>If selling digital products or services, set stock to a very high number (less than 2147483647) to not run out of sellable products.</para>
+    /// <para>If selling digital products or services, set stock to a very high number (less than 1000000) to not run out of sellable products.</para>
     /// </summary>
     [System.ComponentModel.DescriptionAttribute("If selling digital products or services, set stock to a very high number (less th" +
-        "an 2147483647) to not run out of sellable products.")]
+        "an 1000000) to not run out of sellable products.")]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "2.0.521.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute("product", Namespace="https://schemas.cdon.com/product/4.0/4.11.0/availability")]
