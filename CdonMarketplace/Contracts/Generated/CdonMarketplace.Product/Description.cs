@@ -60,7 +60,7 @@ namespace CdonMarketplace.Product
         /// </summary>
         [System.ComponentModel.DataAnnotations.MinLengthAttribute(1)]
         [System.ComponentModel.DataAnnotations.MaxLengthAttribute(10000)]
-        [System.Xml.Serialization.XmlElementAttribute("fr")]
-        public CData Fr { get; set; }
+        [System.Xml.Serialization.XmlElementAttribute("en")]
+        public CData En { get; set; }
     }
 }
