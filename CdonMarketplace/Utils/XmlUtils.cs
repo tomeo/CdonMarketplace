@@ -19,7 +19,7 @@ namespace CdonMarketplace.Utils
         public static string SerializeXml<T>(T subject)
         {
             using var sw = new Utf8StringWriter();
-            using var xw = new SameNamespaceXmlWriter(XmlWriter.Create(sw, WriterSettings));
+            using var xw = new CustomXmlWriter(XmlWriter.Create(sw, WriterSettings));
 
             new XmlSerializer(typeof(T)).Serialize(xw, subject);
 
