@@ -33,5 +33,42 @@ namespace CdonMarketplace.Tests.Contracts.Product
 
             Assert.Equal(expected, xml);
         }
+
+        [Fact]
+        public void ShouldUseCdata2()
+        {
+            var marketplace = new Marketplace
+            {
+                Product = new List<CdonMarketplace.Product.Product>
+                {
+                    new CdonMarketplace.Product.Product
+                    {
+                        Title = new Title
+                        {
+                            Default = "I am a title"
+                        },
+                        Description = new Description
+                        {
+                            Default = "<strong>I contain HTML</strong>",
+                            Dk = "This is dk"
+                        }
+                    },
+                    new CdonMarketplace.Product.Product
+                    {
+                        Title = new Title
+                        {
+                            Default = "I am a title"
+                        },
+                        Description = new Description
+                        {
+                            Default = "<strong>I contain HTML</strong>",
+                            Dk = "This is dk"
+                        }
+                    }
+                }
+            };
+
+            var xml = XmlUtils.SerializeXml(marketplace);
+        }
     }
 }
