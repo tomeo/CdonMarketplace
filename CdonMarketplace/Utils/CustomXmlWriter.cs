@@ -1,61 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Linq.Expressions;
-using System.Reflection;
 using System.Xml;
 
 namespace CdonMarketplace.Utils
 {
-
-    internal static class ExpressionResolver
-    {
-        public static IReadOnlyList<MemberInfo> Resolve<TSource, TResult>(Expression<Func<TSource, TResult>> expression)
-        {
-            var path = new List<MemberInfo>();
-            var visitor = new PropertyVisitor(path);
-            visitor.Visit(expression.Body);
-            path.Reverse();
-
-            return path;
-        }
-
-        private class PropertyVisitor : ExpressionVisitor
-        {
-            private readonly List<MemberInfo> _path;
-            public PropertyVisitor(List<MemberInfo> path)
-            {
-                _path = path;
-            }
-
-            protected override Expression VisitMember(MemberExpression node)
-            {
-                if (!(node.Member is PropertyInfo))
-                {
-                    throw new ArgumentException("The path can only contain properties", nameof(node));
-                }
-
-                _path.Add(node.Member);
-                return base.VisitMember(node);
-            }
-        }
-    }
-
-    internal class CustomXmlWriterSettings
-    {
-	    public bool UseSameNamespaceForAll { get; set; }
-	    private List<string[]> _cDataPaths = new List<string[]>();
-
-	    public void AddCdataMember<TSource, TResult>(Expression<Func<TSource, TResult>> expression)
-	    {
-		    var result = ExpressionResolver.Resolve(expression);
-	    }
-    }
-
-    internal class CustomXmlWriter : XmlWriter
+	internal class CustomXmlWriter : XmlWriter
     {
         private readonly XmlWriter _inner;
-        private readonly CustomXmlWriterSettings _settings;
         private string _namespace;
         private bool _start = true;
         
@@ -64,13 +15,8 @@ namespace CdonMarketplace.Utils
 
         private readonly List<CDataPath> _cDataPaths = new List<CDataPath>
         {
-            new CDataPath(new[] { "marketplace", "product", "description", "default" })
+            //new CDataPath(new[] { "marketplace", "product", "description", "default" })
         };
-
-        //public void AddCdataMember<TSource, TResult>(Expression<Func<TSource, TResult>> expression)
-        //{
-        //    _cDataPaths.Add(new CDataPath(ExpressionResolver.Resolve(expression)));
-        //}
 
         private class CDataPath
         {
@@ -84,11 +30,9 @@ namespace CdonMarketplace.Utils
             }
         }
 
-        public CustomXmlWriter(XmlWriter inner) : this(inner, new CustomXmlWriterSettings()){ }
-        public CustomXmlWriter(XmlWriter inner, CustomXmlWriterSettings settings)
+        public CustomXmlWriter(XmlWriter inner)
         {
 	        _inner = inner;
-	        _settings = settings;
         }
 
         private void Push(string local)
@@ -180,22 +124,13 @@ namespace CdonMarketplace.Utils
 
         public override void WriteStartElement(string prefix, string localName, string ns)
         {
-	        if (_settings.UseSameNamespaceForAll)
+	        if (_start)
 	        {
-		        if (_start)
-		        {
-			        _start = false;
-			        _namespace = ns;
-		        }
-
-		        _inner.WriteStartElement(prefix, localName, _namespace);
+		        _start = false;
+		        _namespace = ns;
 	        }
-	        else
-	        {
-		        _inner.WriteStartElement(prefix, localName, ns);
-            }
 
-	        Push(localName);
+            Push(localName);
         }
 
         public override void WriteString(string text)
@@ -212,5 +147,10 @@ namespace CdonMarketplace.Utils
         public override void WriteWhitespace(string ws) => _inner.WriteWhitespace(ws);
 
         public override WriteState WriteState => _inner.WriteState;
+
+        public void AddCDataPath(IEnumerable<string> path)
+        {
+	        _cDataPaths.Add(new CDataPath(path.Select(x => x.ToLower()).ToArray()));
+        }
     }
 }
