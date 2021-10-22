@@ -5,21 +5,9 @@ namespace CdonMarketplace.Utils
 {
     internal class CDataTracker
     {
-        private int _depth = 0;
-        internal bool CdataMode { get; private set; }
         private readonly List<CDataPath> _cDataPaths = new List<CDataPath>();
-
-        private class CDataPath
-        {
-            public readonly string[] Path;
-            public int PathIndex;
-            public bool IsOnPath = true;
-
-            public CDataPath(string[] path)
-            {
-                Path = path;
-            }
-        }
+        private int _depth;
+        internal bool CdataMode { get; private set; }
 
         internal void Push(string local)
         {
@@ -38,6 +26,7 @@ namespace CdonMarketplace.Utils
                     }
                 }
             }
+
             _depth++;
         }
 
@@ -55,12 +44,24 @@ namespace CdonMarketplace.Utils
                     if (_depth == p.PathIndex + 1)
                         p.IsOnPath = true;
                 }
-
             }
+
             _depth--;
         }
 
         internal void Add(IEnumerable<string> path) => 
             _cDataPaths.Add(new CDataPath(path.Select(x => x.ToLower()).ToArray()));
+
+        private class CDataPath
+        {
+            public readonly string[] Path;
+            public bool IsOnPath = true;
+            public int PathIndex;
+
+            public CDataPath(string[] path)
+            {
+                Path = path;
+            }
+        }
     }
 }

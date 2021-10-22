@@ -2,15 +2,15 @@
 
 namespace CdonMarketplace.Utils
 {
-	public class CDataAttribute : Attribute
-	{
-		public CDataAttribute(Type propertyType, string property)
-		{
-			PropertyType = propertyType;
-			Property = property;
-		}
+    public class CDataAttribute : Attribute
+    {
+        public CDataAttribute(Type propertyType, string property)
+        {
+            PropertyType = propertyType;
+            Property = property;
+        }
 
-		public Type PropertyType { get; }
-		public string Property { get; }
-	}
+        public Type PropertyType { get; }
+        public string Property { get; }
+    }
 }
