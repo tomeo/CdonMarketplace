@@ -15,6 +15,14 @@ namespace CdonMarketplace.Utils
                 Indent = false
             };
 
+        public static void SerializeXmlToStream<T>(T subject, Stream stream)
+        {
+            using var sw = new StreamWriter(stream, Encoding.UTF8);
+            using var xw = new SameNamespaceXmlWriter(XmlWriter.Create(sw, WriterSettings));
+
+            new XmlSerializer(typeof(T)).Serialize(xw, subject);
+        }
+
         public static string SerializeXml<T>(T subject)
         {
             using var sw = new Utf8StringWriter();

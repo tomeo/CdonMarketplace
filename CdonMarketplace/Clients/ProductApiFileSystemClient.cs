@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
 using System.Threading.Tasks;
 using CdonMarketplace.Contracts.Product;
@@ -34,18 +35,17 @@ namespace CdonMarketplace.Clients
             throw new System.NotImplementedException();
         }
 
-        private async Task<Receipt> DoRequest<T>(T content, string filename)
+        private Task<Receipt> DoRequest<T>(T content, string filename)
         {
-            var xml = XmlUtils.SerializeXml(content);
-            var fullPath = System.IO.Path.Combine(_path, $"{filename}.xml");
+            var fullPath = Path.Combine(_path, $"{filename}.xml");
+            using var stream = File.Create(fullPath);
+            XmlUtils.SerializeXmlToStream(content, stream);
 
-            using var outputFile = new System.IO.StreamWriter(fullPath, false, Encoding.UTF8);
-            await outputFile.WriteAsync(xml);
-            return new Receipt
+            return Task.FromResult(new Receipt
             {
                 ReceiptId = fullPath,
                 StatusUrl = fullPath
-            };
+            });
         }
     }
 }
