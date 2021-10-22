@@ -1,79 +1,19 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using System.Xml;
 
 namespace CdonMarketplace.Utils
 {
-	internal class CustomXmlWriter : XmlWriter
+    internal class CustomXmlWriter : XmlWriter
     {
         private readonly XmlWriter _inner;
         private string _namespace;
         private bool _start = true;
-        
-        private int _depth = 0;
-        private bool _cdataMode = false;
-
-        private readonly List<CDataPath> _cDataPaths = new List<CDataPath>
-        {
-            //new CDataPath(new[] { "marketplace", "product", "description", "default" })
-        };
-
-        private class CDataPath
-        {
-            public readonly string[] Path;
-            public int PathIndex;
-            public bool IsOnPath = true;
-
-            public CDataPath(string[] path)
-            {
-                Path = path;
-            }
-        }
+        private readonly CDataTracker _cDataTracker;
 
         public CustomXmlWriter(XmlWriter inner)
         {
-	        _inner = inner;
-        }
-
-        private void Push(string local)
-        {
-            foreach (var p in _cDataPaths)
-            {
-                if (p.IsOnPath)
-                {
-                    if (local == p.Path[p.PathIndex])
-                    {
-                        p.PathIndex++;
-                        _cdataMode = p.PathIndex == p.Path.Length;
-                    }
-                    else
-                    {
-                        p.IsOnPath = false;
-                    }
-                }
-            }
-
-            _depth++;
-        }
-
-        private void Pop()
-        {
-            foreach (var p in _cDataPaths)
-            {
-                if (p.IsOnPath)
-                {
-                    p.PathIndex--;
-                    _cdataMode = false;
-                }
-                else
-                {
-                    if (_depth == p.PathIndex + 1)
-                        p.IsOnPath = true;
-                }
-                
-            }
-
-            _depth--;
+            _inner = inner;
+            _cDataTracker = new CDataTracker();
         }
 
         public override void Flush() => _inner.Flush();
@@ -101,7 +41,7 @@ namespace CdonMarketplace.Utils
         public override void WriteEndElement()
         {
             _inner.WriteEndElement();
-            Pop();
+            _cDataTracker.Pop();
         }
 
         public override void WriteEntityRef(string name) => _inner.WriteEntityRef(name);
@@ -129,13 +69,13 @@ namespace CdonMarketplace.Utils
 		        _start = false;
 		        _namespace = ns;
 	        }
-
-            Push(localName);
+            _inner.WriteStartElement(prefix, localName, _namespace);
+            _cDataTracker.Push(localName);
         }
 
         public override void WriteString(string text)
         {
-            if (_cdataMode)
+            if (_cDataTracker.CdataMode)
                 WriteCData(text);
             else
                 _inner.WriteString(text);
@@ -148,9 +88,7 @@ namespace CdonMarketplace.Utils
 
         public override WriteState WriteState => _inner.WriteState;
 
-        public void AddCDataPath(IEnumerable<string> path)
-        {
-	        _cDataPaths.Add(new CDataPath(path.Select(x => x.ToLower()).ToArray()));
-        }
+        public void AddCDataPath(IEnumerable<string> path) =>
+            _cDataTracker.Add(path);
     }
 }
