@@ -63,13 +63,14 @@ namespace CdonMarketplace.Utils
         public override void WriteStartDocument(bool standalone) => _inner.WriteStartDocument(standalone);
 
         public override void WriteStartElement(string prefix, string localName, string ns)
-        { 
+        {
             if (_start)
-	        { 
-                _start = false; 
+            {
+                _start = false;
                 _namespace = ns;
-	        } 
-            _inner.WriteStartElement(prefix, localName, _namespace); 
+            }
+
+            _inner.WriteStartElement(prefix, localName, _namespace);
             _cDataTracker.Push(localName);
         }
 
