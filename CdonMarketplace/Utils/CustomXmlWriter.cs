@@ -65,9 +65,9 @@ namespace CdonMarketplace.Utils
         public override void WriteStartElement(string prefix, string localName, string ns)
         {
 	        if (_start)
-	        {
-		        _start = false;
-		        _namespace = ns;
+	        { 
+                _start = false; 
+                _namespace = ns;
 	        }
             _inner.WriteStartElement(prefix, localName, _namespace);
             _cDataTracker.Push(localName);
