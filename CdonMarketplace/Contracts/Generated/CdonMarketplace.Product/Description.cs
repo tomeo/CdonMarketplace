@@ -16,7 +16,7 @@ namespace CdonMarketplace.Product
         [System.ComponentModel.DataAnnotations.MaxLengthAttribute(10000)]
         [System.ComponentModel.DataAnnotations.RequiredAttribute()]
         [System.Xml.Serialization.XmlElementAttribute("default")]
-        public CData Default { get; set; }
+        public string Default { get; set; }
 
         /// <summary>
         /// <para xml:lang="en">Minimum length: 1.</para>
@@ -25,7 +25,7 @@ namespace CdonMarketplace.Product
         [System.ComponentModel.DataAnnotations.MinLengthAttribute(1)]
         [System.ComponentModel.DataAnnotations.MaxLengthAttribute(10000)]
         [System.Xml.Serialization.XmlElementAttribute("se")]
-        public CData Se { get; set; }
+        public string Se { get; set; }
 
         /// <summary>
         /// <para xml:lang="en">Minimum length: 1.</para>
@@ -34,7 +34,7 @@ namespace CdonMarketplace.Product
         [System.ComponentModel.DataAnnotations.MinLengthAttribute(1)]
         [System.ComponentModel.DataAnnotations.MaxLengthAttribute(10000)]
         [System.Xml.Serialization.XmlElementAttribute("dk")]
-        public CData Dk { get; set; }
+        public string Dk { get; set; }
 
         /// <summary>
         /// <para xml:lang="en">Minimum length: 1.</para>
@@ -43,7 +43,7 @@ namespace CdonMarketplace.Product
         [System.ComponentModel.DataAnnotations.MinLengthAttribute(1)]
         [System.ComponentModel.DataAnnotations.MaxLengthAttribute(10000)]
         [System.Xml.Serialization.XmlElementAttribute("no")]
-        public CData No { get; set; }
+        public string No { get; set; }
 
         /// <summary>
         /// <para xml:lang="en">Minimum length: 1.</para>
@@ -52,7 +52,7 @@ namespace CdonMarketplace.Product
         [System.ComponentModel.DataAnnotations.MinLengthAttribute(1)]
         [System.ComponentModel.DataAnnotations.MaxLengthAttribute(10000)]
         [System.Xml.Serialization.XmlElementAttribute("fi")]
-        public CData Fi { get; set; }
+        public string Fi { get; set; }
 
         /// <summary>
         /// <para xml:lang="en">Minimum length: 1.</para>
@@ -61,6 +61,6 @@ namespace CdonMarketplace.Product
         [System.ComponentModel.DataAnnotations.MinLengthAttribute(1)]
         [System.ComponentModel.DataAnnotations.MaxLengthAttribute(10000)]
         [System.Xml.Serialization.XmlElementAttribute("en")]
-        public CData En { get; set; }
+        public string En { get; set; }
     }
 }

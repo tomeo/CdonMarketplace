@@ -1,20 +1,22 @@
-﻿using System.Xml;
+﻿using System.Collections.Generic;
+using System.Xml;
 
 namespace CdonMarketplace.Utils
 {
-    internal class SameNamespaceXmlWriter : XmlWriter
+    internal class CustomXmlWriter : XmlWriter
     {
         private readonly XmlWriter _inner;
         private string _namespace;
         private bool _start = true;
+        private readonly CDataTracker _cDataTracker;
 
-        public SameNamespaceXmlWriter(XmlWriter inner)
+        public CustomXmlWriter(XmlWriter inner)
         {
             _inner = inner;
+            _cDataTracker = new CDataTracker();
         }
 
         public override void Flush() => _inner.Flush();
-
 
         public override string LookupPrefix(string ns) => _inner.LookupPrefix(ns);
 
@@ -36,7 +38,11 @@ namespace CdonMarketplace.Utils
 
         public override void WriteEndDocument() => _inner.WriteEndDocument();
 
-        public override void WriteEndElement() => _inner.WriteEndElement();
+        public override void WriteEndElement()
+        {
+            _inner.WriteEndElement();
+            _cDataTracker.Pop();
+        }
 
         public override void WriteEntityRef(string name) => _inner.WriteEntityRef(name);
 
@@ -65,9 +71,16 @@ namespace CdonMarketplace.Utils
             }
 
             _inner.WriteStartElement(prefix, localName, _namespace);
+            _cDataTracker.Push(localName);
         }
 
-        public override void WriteString(string text) => _inner.WriteString(text);
+        public override void WriteString(string text)
+        {
+            if (_cDataTracker.CdataMode)
+                WriteCData(text);
+            else
+                _inner.WriteString(text);
+        }
 
         public override void WriteSurrogateCharEntity(char lowChar, char highChar) =>
             _inner.WriteSurrogateCharEntity(lowChar, highChar);
@@ -75,5 +88,8 @@ namespace CdonMarketplace.Utils
         public override void WriteWhitespace(string ws) => _inner.WriteWhitespace(ws);
 
         public override WriteState WriteState => _inner.WriteState;
+
+        public void AddCDataPath(IEnumerable<string> path) =>
+            _cDataTracker.Add(path);
     }
 }
