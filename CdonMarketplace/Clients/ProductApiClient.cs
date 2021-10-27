@@ -40,8 +40,10 @@ namespace CdonMarketplace.Clients
 
         private async Task<Receipt> DoRequest<T>(T content, string endpoint)
         {
-            var xml = XmlUtils.SerializeXml(content);
-            var body = new StringContent(xml, Encoding.UTF8, "application/xml");
+            using var body =
+                new PushStreamContent(
+                    (stream, httpContent, transportContext) => XmlUtils.SerializeXmlToStream(content, stream),
+                    "application/xml");
 
             var response = await _client.PostAsync($"/{endpoint}", body).ConfigureAwait(false);
             var responseContent = await response.Content.ReadAsStringAsync();
