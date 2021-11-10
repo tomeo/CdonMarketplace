@@ -42,7 +42,10 @@ namespace CdonMarketplace.Clients
         {
             using var body =
                 new PushStreamContent(
-                    (stream, httpContent, transportContext) => XmlUtils.SerializeXmlToStream(content, stream),
+                    (stream, httpContent, transportContext) => {
+                        XmlUtils.SerializeXmlToStream(content, stream);
+                        stream.Close();
+                    },
                     "application/xml");
 
             var response = await _client.PostAsync($"/{endpoint}", body).ConfigureAwait(false);

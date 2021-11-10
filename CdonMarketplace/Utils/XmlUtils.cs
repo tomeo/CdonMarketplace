@@ -17,7 +17,7 @@ namespace CdonMarketplace.Utils
 
         public static void SerializeXmlToStream<T>(T subject, Stream stream)
         {
-            using var sw = new StreamWriter(stream, Encoding.UTF8);
+            using var sw = new StreamWriter(stream, Encoding.UTF8, 1024, true);
             using var xw = new CustomXmlWriter(XmlWriter.Create(sw, WriterSettings));
 
             new CustomXmlSerializer(typeof(T)).Serialize(xw, subject);
