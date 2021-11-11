@@ -31,6 +31,13 @@ namespace CdonMarketplace.Clients
                 BaseAddress = new Uri(baseUrl)
             };
             _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("api", apiKey);
+            _client.DefaultRequestHeaders.UserAgent.Add(GetProductInfoHeader());
+        }
+
+        private static ProductInfoHeaderValue GetProductInfoHeader()
+        {
+            var assemblyName = System.Reflection.Assembly.GetExecutingAssembly().GetName();
+            return new ProductInfoHeaderValue(assemblyName.Name, assemblyName.Version.ToString());
         }
 
         public async Task<Receipt> UploadProduct(Product.Marketplace products) => await DoRequest(products, "product");
