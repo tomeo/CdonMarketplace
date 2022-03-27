@@ -32,6 +32,7 @@ The CDONMarketplace Nuget package versions follow [Semantic Versioning](https://
 | 2.0.0                                 | 1.0               | 4.9.0               |
 | 3.0.0                                 | 1.0               | 4.11.0              |
 | 3.1.0                                 | 1.0               | 4.11.0              |
+| 3.1.1                                 | 1.0               | 4.11.1              |
 
 # Documentation
 
