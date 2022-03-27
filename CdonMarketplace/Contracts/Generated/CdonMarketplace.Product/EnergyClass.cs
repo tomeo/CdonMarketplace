@@ -19,7 +19,7 @@ namespace CdonMarketplace.Product
         "ent/energy-labels/index_en.htm")]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "2.0.521.0")]
     [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute("energyClass", Namespace="https://schemas.cdon.com/product/4.0/4.11.1/product")]
+    [System.Xml.Serialization.XmlTypeAttribute("energyClass", Namespace="https://schemas.cdon.com/product/4.0/4.12.0/product")]
     public enum EnergyClass
     {
         

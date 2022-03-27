@@ -6,7 +6,10 @@ curl -O -sS https://schemas.cdon.com/product/4.0/$1/media.xsd && \
 curl -O -sS https://schemas.cdon.com/product/4.0/$1/price.xsd && \
 curl -O -sS https://schemas.cdon.com/product/4.0/$1/product.xsd && \
 curl -O -sS https://schemas.cdon.com/product/4.0/$1/types.xsd && \
-curl -O -sS https://schemas.cdon.com/product/4.0/$1/variants.xsd
+curl -O -sS https://schemas.cdon.com/product/4.0/$1/variants.xsd && \
+curl -O -sS https://schemas.cdon.com/product/4.0/$1/formattedDescription.xsd && \
+curl -O -sS https://schemas.cdon.com/product/4.0/$1/disc.xsd && \
+curl -O -sS https://schemas.cdon.com/product/4.0/$1/specification.xsd
 
 OUT=../CdonMarketplace/Contracts/Generated
 rm -rf $OUT
@@ -20,6 +23,9 @@ xscgen \
     --namespace "|energy.xsd=Product" \
     --namespace "|variants.xsd=Product" \
     --namespace "|identities.xsd=Product" \
+    --namespace "|formattedDescription.xsd=Product" \
+    --namespace "|disc.xsd=Product" \
+    --namespace "|specification.xsd=Product" \
     --pascal \
     --separateFiles \
     --nullable \

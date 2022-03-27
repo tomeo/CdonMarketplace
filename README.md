@@ -21,8 +21,6 @@ paket add CdonMarketplace --project /path/to/project.fsproj
 ```
 
 # API-Support
-Please note that CDON *does not* employ semantic versioning for their APIs. The Order-API has not received a version update in years and the Product API only changes its version arbitrarily. CDON has and will refer to two or three different versions of the Product API as 4.9.0 for example.
-
 This Nuget package will do it's best to make sure its updated to use the latest contracts/schemas from https://schemas.cdon.com/product/.
 
 The CDONMarketplace Nuget package versions follow [Semantic Versioning](https://semver.org/).
@@ -33,6 +31,7 @@ The CDONMarketplace Nuget package versions follow [Semantic Versioning](https://
 | 3.0.0                                 | 1.0               | 4.11.0              |
 | 3.1.0                                 | 1.0               | 4.11.0              |
 | 3.1.1                                 | 1.0               | 4.11.1              |
+| 3.2.0                                 | 1.0               | 4.12.0              |
 
 # Documentation
 

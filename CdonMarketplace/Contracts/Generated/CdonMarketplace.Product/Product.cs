@@ -14,7 +14,7 @@ namespace CdonMarketplace.Product
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "2.0.521.0")]
     [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute("product", Namespace="https://schemas.cdon.com/product/4.0/4.11.1/product")]
+    [System.Xml.Serialization.XmlTypeAttribute("product", Namespace="https://schemas.cdon.com/product/4.0/4.12.0/product")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class Product
@@ -28,9 +28,11 @@ namespace CdonMarketplace.Product
         [System.Xml.Serialization.XmlElementAttribute("title")]
         public Title Title { get; set; }
         
-        [System.ComponentModel.DataAnnotations.RequiredAttribute()]
         [System.Xml.Serialization.XmlElementAttribute("description")]
         public Description Description { get; set; }
+        
+        [System.Xml.Serialization.XmlElementAttribute("formattedDescription")]
+        public CdonMarketplace.Product.FormattedDescription FormattedDescription { get; set; }
         
         [System.ComponentModel.DataAnnotations.RequiredAttribute()]
         [System.Xml.Serialization.XmlElementAttribute("category")]
@@ -50,7 +52,7 @@ namespace CdonMarketplace.Product
         private System.Collections.Generic.List<UspValue> _usp;
         
         [System.Xml.Serialization.XmlArrayAttribute("usp")]
-        [System.Xml.Serialization.XmlArrayItemAttribute("value", Namespace="https://schemas.cdon.com/product/4.0/4.11.1/product")]
+        [System.Xml.Serialization.XmlArrayItemAttribute("value", Namespace="https://schemas.cdon.com/product/4.0/4.12.0/product")]
         public System.Collections.Generic.List<UspValue> Usp
         {
             get
@@ -81,6 +83,8 @@ namespace CdonMarketplace.Product
         public Product()
         {
             this._usp = new System.Collections.Generic.List<UspValue>();
+            this._discs = new System.Collections.Generic.List<CdonMarketplace.Product.Disc>();
+            this._specifications = new System.Collections.Generic.List<CdonMarketplace.Product.Specification>();
         }
         
         [System.Xml.Serialization.XmlElementAttribute("energy")]
@@ -230,6 +234,64 @@ namespace CdonMarketplace.Product
         
         [System.Xml.Serialization.XmlElementAttribute("productType")]
         public ProductType ProductType { get; set; }
+        
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        private System.Collections.Generic.List<CdonMarketplace.Product.Disc> _discs;
+        
+        [System.Xml.Serialization.XmlArrayAttribute("discs")]
+        [System.Xml.Serialization.XmlArrayItemAttribute("disc", Namespace="https://schemas.cdon.com/product/4.0/4.12.0/product")]
+        public System.Collections.Generic.List<CdonMarketplace.Product.Disc> Discs
+        {
+            get
+            {
+                return this._discs;
+            }
+            set
+            {
+                this._discs = value;
+            }
+        }
+        
+        /// <summary>
+        /// <para xml:lang="en">Gets a value indicating whether the Discs collection is empty.</para>
+        /// </summary>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool DiscsSpecified
+        {
+            get
+            {
+                return (this.Discs.Count != 0);
+            }
+        }
+        
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        private System.Collections.Generic.List<CdonMarketplace.Product.Specification> _specifications;
+        
+        [System.Xml.Serialization.XmlArrayAttribute("specifications")]
+        [System.Xml.Serialization.XmlArrayItemAttribute("specification", Namespace="https://schemas.cdon.com/product/4.0/4.12.0/product")]
+        public System.Collections.Generic.List<CdonMarketplace.Product.Specification> Specifications
+        {
+            get
+            {
+                return this._specifications;
+            }
+            set
+            {
+                this._specifications = value;
+            }
+        }
+        
+        /// <summary>
+        /// <para xml:lang="en">Gets a value indicating whether the Specifications collection is empty.</para>
+        /// </summary>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool SpecificationsSpecified
+        {
+            get
+            {
+                return (this.Specifications.Count != 0);
+            }
+        }
         
         [System.Xml.Serialization.XmlElementAttribute("variants")]
         public CdonMarketplace.Product.Variants Variants { get; set; }

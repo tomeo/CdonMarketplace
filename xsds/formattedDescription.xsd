@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<xs:schema
+	attributeFormDefault="unqualified"
+	elementFormDefault="qualified"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+	<xs:include schemaLocation="types.xsd" />
+
+	<xs:complexType name="formattedDescription">
+		<xs:sequence>
+			<xs:element name="summary" minOccurs="0" maxOccurs="1" type="summaryLanguageString" />
+			<xs:element name="sections" minOccurs="1" maxOccurs="1" type="descriptionSections" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="descriptionSections">
+		<xs:sequence>
+			<xs:element name="se" minOccurs="0" maxOccurs="1" type="descriptionLanguageSection" />
+			<xs:element name="dk" minOccurs="0" maxOccurs="1" type="descriptionLanguageSection" />
+			<xs:element name="no" minOccurs="0" maxOccurs="1" type="descriptionLanguageSection" />
+			<xs:element name="fi" minOccurs="0" maxOccurs="1" type="descriptionLanguageSection" />
+			<xs:element name="en" minOccurs="0" maxOccurs="1" type="descriptionLanguageSection" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="descriptionLanguageSection">
+		<xs:sequence>
+			<xs:element name="section" minOccurs="1" maxOccurs="20" type="descriptionSection" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="descriptionSection">
+		<xs:sequence>
+			<xs:element name="header" minOccurs="0" maxOccurs="1" type="descriptionString" />
+			<xs:element name="body" minOccurs="1" maxOccurs="1" type="descriptionBody" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="descriptionBody">
+		<xs:sequence>
+			<xs:element name="paragraph" minOccurs="1" maxOccurs="500" type="descriptionString" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="summaryLanguageString">
+		<xs:sequence>
+			<xs:element name="se" minOccurs="0" maxOccurs="1" type="summaryString" />
+			<xs:element name="dk" minOccurs="0" maxOccurs="1" type="summaryString" />
+			<xs:element name="no" minOccurs="0" maxOccurs="1" type="summaryString" />
+			<xs:element name="fi" minOccurs="0" maxOccurs="1" type="summaryString" />
+			<xs:element name="en" minOccurs="0" maxOccurs="1" type="summaryString" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:simpleType name="summaryString">
+		<xs:restriction base="xs:token">
+			<xs:minLength value="1" />
+			<xs:maxLength value="250" />
+		</xs:restriction>
+	</xs:simpleType>
+
+</xs:schema>

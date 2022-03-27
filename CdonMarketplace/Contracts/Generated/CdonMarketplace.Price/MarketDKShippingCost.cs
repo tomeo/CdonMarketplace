@@ -14,7 +14,7 @@ namespace CdonMarketplace.Price
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "2.0.521.0")]
     [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute("MarketDKShippingCost", Namespace="https://schemas.cdon.com/product/4.0/4.11.1/price", AnonymousType=true)]
+    [System.Xml.Serialization.XmlTypeAttribute("MarketDKShippingCost", Namespace="https://schemas.cdon.com/product/4.0/4.12.0/price", AnonymousType=true)]
     public enum MarketDKShippingCost
     {
         

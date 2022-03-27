@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<xs:schema
+	attributeFormDefault="unqualified"
+	elementFormDefault="qualified"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+	<xs:include schemaLocation="types.xsd" />
+
+	<xs:complexType name="discs">
+		<xs:sequence>
+			<xs:element name="disc" minOccurs="1" maxOccurs="100" type="disc" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="disc">
+		<xs:sequence>
+			<xs:element name="name" minOccurs="0" maxOccurs="1" type="languageString" />
+			<xs:element name="tracks" minOccurs="1" maxOccurs="1" type="tracks" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="tracks">
+		<xs:sequence>
+			<xs:element name="track" minOccurs="1" maxOccurs="100" type="track" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="track">
+		<xs:sequence>
+			<xs:element name="title" minOccurs="1" maxOccurs="1" type="languageString" />
+		</xs:sequence>
+	</xs:complexType>
+
+</xs:schema>
