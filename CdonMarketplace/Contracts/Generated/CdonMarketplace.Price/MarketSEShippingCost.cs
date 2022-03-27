@@ -14,7 +14,7 @@ namespace CdonMarketplace.Price
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "2.0.521.0")]
     [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute("MarketSEShippingCost", Namespace="https://schemas.cdon.com/product/4.0/4.11.0/price", AnonymousType=true)]
+    [System.Xml.Serialization.XmlTypeAttribute("MarketSEShippingCost", Namespace="https://schemas.cdon.com/product/4.0/4.11.1/price", AnonymousType=true)]
     public enum MarketSEShippingCost
     {
         
@@ -62,6 +62,12 @@ namespace CdonMarketplace.Price
         
         [System.Xml.Serialization.XmlEnumAttribute("499")]
         Item499,
+        
+        [System.Xml.Serialization.XmlEnumAttribute("599")]
+        Item599,
+        
+        [System.Xml.Serialization.XmlEnumAttribute("799")]
+        Item799,
         
         [System.Xml.Serialization.XmlEnumAttribute("995")]
         Item995,

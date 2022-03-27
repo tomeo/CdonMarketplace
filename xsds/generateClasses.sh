@@ -66,6 +66,3 @@ xscgen \
     --collectionType=System.Collections.Generic.List\`1 \
     --output=$OUT \
     media.xsd
-
-# Hack to fix CData
-cp ./Description.cs $OUT/CdonMarketplace.Product/Description.cs

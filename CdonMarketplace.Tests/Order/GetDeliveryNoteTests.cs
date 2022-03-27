@@ -8,8 +8,7 @@ namespace CdonMarketplace.Tests.Order
 {
     public class GetDeliveryNoteTests
     {
-        //[Fact(Skip = "Not a real unit test")]
-        [Fact]
+        [Fact(Skip = "Not a real unit test")]
         public async Task ShouldGetAllOrderReturnAddresses()
         {
             var env = LaunchSettingsProvider.GetEnvironmentalVariables();

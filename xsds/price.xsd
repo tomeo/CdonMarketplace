@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 
 <xs:schema id="price"
-           targetNamespace="https://schemas.cdon.com/product/4.0/4.11.0/price"
-           xmlns="https://schemas.cdon.com/product/4.0/4.11.0/price"
+           targetNamespace="https://schemas.cdon.com/product/4.0/4.11.1/price"
+           xmlns="https://schemas.cdon.com/product/4.0/4.11.1/price"
            attributeFormDefault="unqualified"
            elementFormDefault="qualified"
            xmlns:xs="http://www.w3.org/2001/XMLSchema">
@@ -51,6 +51,8 @@
                 <xs:enumeration value="395" />
                 <xs:enumeration value="495" />
                 <xs:enumeration value="499" />
+                <xs:enumeration value="599" />
+                <xs:enumeration value="799" />
                 <xs:enumeration value="995" />
                 <xs:enumeration value="1195" />
                 <xs:enumeration value="1499" />

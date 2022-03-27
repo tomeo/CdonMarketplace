@@ -14,7 +14,7 @@ namespace CdonMarketplace.Price
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "2.0.521.0")]
     [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute("marketB2BSE", Namespace="https://schemas.cdon.com/product/4.0/4.11.0/price")]
+    [System.Xml.Serialization.XmlTypeAttribute("marketB2BSE", Namespace="https://schemas.cdon.com/product/4.0/4.11.1/price")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class MarketB2BSE : Market
