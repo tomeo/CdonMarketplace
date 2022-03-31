@@ -73,7 +73,7 @@ namespace CdonMarketplace.Product
         {
             get
             {
-                return (this.Usp.Count != 0);
+                return (this.Usp?.Count != 0);
             }
         }
         
@@ -260,7 +260,7 @@ namespace CdonMarketplace.Product
         {
             get
             {
-                return (this.Discs.Count != 0);
+                return (this.Discs?.Count != 0);
             }
         }
         
@@ -289,7 +289,7 @@ namespace CdonMarketplace.Product
         {
             get
             {
-                return (this.Specifications.Count != 0);
+                return (this.Specifications?.Count != 0);
             }
         }
         

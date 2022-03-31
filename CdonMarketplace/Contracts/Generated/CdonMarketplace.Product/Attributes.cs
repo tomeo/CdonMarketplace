@@ -50,7 +50,7 @@ namespace CdonMarketplace.Product
         {
             get
             {
-                return (this.Any.Count != 0);
+                return (this.Any?.Count != 0);
             }
         }
         

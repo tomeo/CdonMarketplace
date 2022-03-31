@@ -44,7 +44,7 @@ namespace CdonMarketplace.Product
         {
             get
             {
-                return (this.VariantBySize.Count != 0);
+                return (this.VariantBySize?.Count != 0);
             }
         }
         
@@ -84,7 +84,7 @@ namespace CdonMarketplace.Product
         {
             get
             {
-                return (this.VariantByColor.Count != 0);
+                return (this.VariantByColor?.Count != 0);
             }
         }
         
@@ -112,7 +112,7 @@ namespace CdonMarketplace.Product
         {
             get
             {
-                return (this.VariantByFlavor.Count != 0);
+                return (this.VariantByFlavor?.Count != 0);
             }
         }
         
@@ -140,7 +140,7 @@ namespace CdonMarketplace.Product
         {
             get
             {
-                return (this.VariantBySizeColor.Count != 0);
+                return (this.VariantBySizeColor?.Count != 0);
             }
         }
         
@@ -168,7 +168,7 @@ namespace CdonMarketplace.Product
         {
             get
             {
-                return (this.VariantBySizeFlavor.Count != 0);
+                return (this.VariantBySizeFlavor?.Count != 0);
             }
         }
     }

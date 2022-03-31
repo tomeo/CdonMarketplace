@@ -72,3 +72,5 @@ xscgen \
     --collectionType=System.Collections.Generic.List\`1 \
     --output=$OUT \
     media.xsd
+
+find $OUT -type f -exec sed -i -e 's/.Count != 0/?.Count != 0/g' {} \;

@@ -45,7 +45,7 @@ namespace CdonMarketplace.Product
         {
             get
             {
-                return (this.Se.Count != 0);
+                return (this.Se?.Count != 0);
             }
         }
         
@@ -86,7 +86,7 @@ namespace CdonMarketplace.Product
         {
             get
             {
-                return (this.Dk.Count != 0);
+                return (this.Dk?.Count != 0);
             }
         }
         
@@ -115,7 +115,7 @@ namespace CdonMarketplace.Product
         {
             get
             {
-                return (this.No.Count != 0);
+                return (this.No?.Count != 0);
             }
         }
         
@@ -144,7 +144,7 @@ namespace CdonMarketplace.Product
         {
             get
             {
-                return (this.Fi.Count != 0);
+                return (this.Fi?.Count != 0);
             }
         }
         
@@ -173,7 +173,7 @@ namespace CdonMarketplace.Product
         {
             get
             {
-                return (this.En.Count != 0);
+                return (this.En?.Count != 0);
             }
         }
     }

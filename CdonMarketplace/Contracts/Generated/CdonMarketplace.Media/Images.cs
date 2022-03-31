@@ -56,7 +56,7 @@ namespace CdonMarketplace.Media
         {
             get
             {
-                return (this.Extra.Count != 0);
+                return (this.Extra?.Count != 0);
             }
         }
         
