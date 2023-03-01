@@ -1,14 +1,15 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
         <TargetFramework>netstandard2.0</TargetFramework>
-        <Version>3.3.0</Version>
+        <Version>3.3.1</Version>
         <OutputType>Library</OutputType>
         <Title>CDON Marketplace</Title>
         <Description>CDON Marketplace</Description>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <Company>CDON.COM</Company>
         <Authors>CDON.COM</Authors>
-        <PackageProjectUrl>https://github.com/tomeo/CDON.Marketplace</PackageProjectUrl>
+        <PackageProjectUrl>https://github.com/tomeo/CdonMarketplace</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/tomeo/CdonMarketplace</RepositoryUrl>
         <PackageIcon>CDON.png</PackageIcon>
         <LangVersion>8</LangVersion>
     </PropertyGroup>
