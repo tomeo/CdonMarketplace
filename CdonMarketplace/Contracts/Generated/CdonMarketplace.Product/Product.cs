@@ -14,7 +14,7 @@ namespace CdonMarketplace.Product
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "2.0.521.0")]
     [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute("product", Namespace="https://schemas.cdon.com/product/4.0/4.12.0/product")]
+    [System.Xml.Serialization.XmlTypeAttribute("product", Namespace="https://schemas.cdon.com/product/4.0/4.12.2/product")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class Product
@@ -52,7 +52,7 @@ namespace CdonMarketplace.Product
         private System.Collections.Generic.List<UspValue> _usp;
         
         [System.Xml.Serialization.XmlArrayAttribute("usp")]
-        [System.Xml.Serialization.XmlArrayItemAttribute("value", Namespace="https://schemas.cdon.com/product/4.0/4.12.0/product")]
+        [System.Xml.Serialization.XmlArrayItemAttribute("value", Namespace="https://schemas.cdon.com/product/4.0/4.12.2/product")]
         public System.Collections.Generic.List<UspValue> Usp
         {
             get
@@ -229,6 +229,9 @@ namespace CdonMarketplace.Product
             }
         }
         
+        [System.Xml.Serialization.XmlElementAttribute("conditionGrade")]
+        public ConditionGrade ConditionGrade { get; set; }
+        
         [System.Xml.Serialization.XmlElementAttribute("link")]
         public Link Link { get; set; }
         
@@ -239,7 +242,7 @@ namespace CdonMarketplace.Product
         private System.Collections.Generic.List<CdonMarketplace.Product.Disc> _discs;
         
         [System.Xml.Serialization.XmlArrayAttribute("discs")]
-        [System.Xml.Serialization.XmlArrayItemAttribute("disc", Namespace="https://schemas.cdon.com/product/4.0/4.12.0/product")]
+        [System.Xml.Serialization.XmlArrayItemAttribute("disc", Namespace="https://schemas.cdon.com/product/4.0/4.12.2/product")]
         public System.Collections.Generic.List<CdonMarketplace.Product.Disc> Discs
         {
             get
@@ -268,7 +271,7 @@ namespace CdonMarketplace.Product
         private System.Collections.Generic.List<CdonMarketplace.Product.Specification> _specifications;
         
         [System.Xml.Serialization.XmlArrayAttribute("specifications")]
-        [System.Xml.Serialization.XmlArrayItemAttribute("specification", Namespace="https://schemas.cdon.com/product/4.0/4.12.0/product")]
+        [System.Xml.Serialization.XmlArrayItemAttribute("specification", Namespace="https://schemas.cdon.com/product/4.0/4.12.2/product")]
         public System.Collections.Generic.List<CdonMarketplace.Product.Specification> Specifications
         {
             get

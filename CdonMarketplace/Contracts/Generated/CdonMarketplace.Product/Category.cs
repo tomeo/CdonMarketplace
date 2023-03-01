@@ -20,7 +20,7 @@ namespace CdonMarketplace.Product
     [System.ComponentModel.DescriptionAttribute(@"The category can be either a cdon category or a google category. Documentation on how to use categories can be found here: https://connect.marketplace.cdon.com/help/product_data_specification APIs to fetch the categories can be found here: https://cdonexternalapi-prod-apim.developer.azure-api.net/apis")]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "2.0.521.0")]
     [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute("category", Namespace="https://schemas.cdon.com/product/4.0/4.12.0/product")]
+    [System.Xml.Serialization.XmlTypeAttribute("category", Namespace="https://schemas.cdon.com/product/4.0/4.12.2/product")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class Category

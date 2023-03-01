@@ -9,7 +9,7 @@
 
 	<xs:complexType name="specifications">
 		<xs:sequence>
-			<xs:element name="specification" minOccurs="1" maxOccurs="50" type="specification" />
+			<xs:element name="specification" minOccurs="1" maxOccurs="100" type="specification" />
 		</xs:sequence>
 	</xs:complexType>
 
@@ -22,7 +22,7 @@
 
 	<xs:complexType name="specificationRows">
 		<xs:sequence>
-			<xs:element name="row" minOccurs="1" maxOccurs="50" type="specificationRow" />
+			<xs:element name="row" minOccurs="1" maxOccurs="500" type="specificationRow" />
 		</xs:sequence>
 	</xs:complexType>
 

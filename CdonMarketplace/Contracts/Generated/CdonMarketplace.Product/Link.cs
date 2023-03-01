@@ -18,7 +18,7 @@ namespace CdonMarketplace.Product
     [System.ComponentModel.DescriptionAttribute("The URL to the product on your website in the specified language.")]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "2.0.521.0")]
     [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute("link", Namespace="https://schemas.cdon.com/product/4.0/4.12.0/product")]
+    [System.Xml.Serialization.XmlTypeAttribute("link", Namespace="https://schemas.cdon.com/product/4.0/4.12.2/product")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class Link

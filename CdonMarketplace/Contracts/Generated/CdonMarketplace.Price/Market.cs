@@ -19,7 +19,7 @@ namespace CdonMarketplace.Price
         "vat\"-elements.")]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "2.0.521.0")]
     [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute("market", Namespace="https://schemas.cdon.com/product/4.0/4.12.0/price")]
+    [System.Xml.Serialization.XmlTypeAttribute("market", Namespace="https://schemas.cdon.com/product/4.0/4.12.2/price")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(MarketB2BSE))]
@@ -81,6 +81,70 @@ namespace CdonMarketplace.Price
             {
                 this.IsShippedFromEUValue = value.GetValueOrDefault();
                 this.IsShippedFromEUValueSpecified = value.HasValue;
+            }
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlElementAttribute("shippingMethod")]
+        public ShippingMethods ShippingMethodValue { get; set; }
+        
+        /// <summary>
+        /// <para xml:lang="en">Gets or sets a value indicating whether the ShippingMethod property is specified.</para>
+        /// </summary>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        public bool ShippingMethodValueSpecified { get; set; }
+        
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public System.Nullable<ShippingMethods> ShippingMethod
+        {
+            get
+            {
+                if (this.ShippingMethodValueSpecified)
+                {
+                    return this.ShippingMethodValue;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            set
+            {
+                this.ShippingMethodValue = value.GetValueOrDefault();
+                this.ShippingMethodValueSpecified = value.HasValue;
+            }
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlElementAttribute("carrier")]
+        public Carriers CarrierValue { get; set; }
+        
+        /// <summary>
+        /// <para xml:lang="en">Gets or sets a value indicating whether the Carrier property is specified.</para>
+        /// </summary>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        public bool CarrierValueSpecified { get; set; }
+        
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public System.Nullable<Carriers> Carrier
+        {
+            get
+            {
+                if (this.CarrierValueSpecified)
+                {
+                    return this.CarrierValue;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            set
+            {
+                this.CarrierValue = value.GetValueOrDefault();
+                this.CarrierValueSpecified = value.HasValue;
             }
         }
     }

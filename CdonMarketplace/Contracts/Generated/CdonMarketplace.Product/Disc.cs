@@ -14,7 +14,7 @@ namespace CdonMarketplace.Product
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "2.0.521.0")]
     [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute("disc", Namespace="https://schemas.cdon.com/product/4.0/4.12.0/product")]
+    [System.Xml.Serialization.XmlTypeAttribute("disc", Namespace="https://schemas.cdon.com/product/4.0/4.12.2/product")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class Disc
@@ -28,7 +28,7 @@ namespace CdonMarketplace.Product
         
         [System.ComponentModel.DataAnnotations.RequiredAttribute()]
         [System.Xml.Serialization.XmlArrayAttribute("tracks")]
-        [System.Xml.Serialization.XmlArrayItemAttribute("track", Namespace="https://schemas.cdon.com/product/4.0/4.12.0/product")]
+        [System.Xml.Serialization.XmlArrayItemAttribute("track", Namespace="https://schemas.cdon.com/product/4.0/4.12.2/product")]
         public System.Collections.Generic.List<Track> Tracks
         {
             get

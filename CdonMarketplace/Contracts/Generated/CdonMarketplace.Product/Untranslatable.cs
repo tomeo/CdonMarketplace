@@ -14,7 +14,7 @@ namespace CdonMarketplace.Product
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "2.0.521.0")]
     [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute("untranslatable", Namespace="https://schemas.cdon.com/product/4.0/4.12.0/product")]
+    [System.Xml.Serialization.XmlTypeAttribute("untranslatable", Namespace="https://schemas.cdon.com/product/4.0/4.12.2/product")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class Untranslatable

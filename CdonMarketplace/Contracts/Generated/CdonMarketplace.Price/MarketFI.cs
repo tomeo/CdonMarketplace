@@ -14,7 +14,7 @@ namespace CdonMarketplace.Price
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "2.0.521.0")]
     [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute("marketFI", Namespace="https://schemas.cdon.com/product/4.0/4.12.0/price")]
+    [System.Xml.Serialization.XmlTypeAttribute("marketFI", Namespace="https://schemas.cdon.com/product/4.0/4.12.2/price")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class MarketFI : Market

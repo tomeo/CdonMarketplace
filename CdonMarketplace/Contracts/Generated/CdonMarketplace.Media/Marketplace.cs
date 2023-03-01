@@ -14,10 +14,10 @@ namespace CdonMarketplace.Media
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "2.0.521.0")]
     [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute("marketplace", Namespace="https://schemas.cdon.com/product/4.0/4.12.0/media", AnonymousType=true)]
+    [System.Xml.Serialization.XmlTypeAttribute("marketplace", Namespace="https://schemas.cdon.com/product/4.0/4.12.2/media", AnonymousType=true)]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlRootAttribute("marketplace", Namespace="https://schemas.cdon.com/product/4.0/4.12.0/media")]
+    [System.Xml.Serialization.XmlRootAttribute("marketplace", Namespace="https://schemas.cdon.com/product/4.0/4.12.2/media")]
     public partial class Marketplace
     {
         

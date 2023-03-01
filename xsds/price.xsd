@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 
 <xs:schema id="price"
-           targetNamespace="https://schemas.cdon.com/product/4.0/4.12.0/price"
-           xmlns="https://schemas.cdon.com/product/4.0/4.12.0/price"
+           targetNamespace="https://schemas.cdon.com/product/4.0/4.12.2/price"
+           xmlns="https://schemas.cdon.com/product/4.0/4.12.2/price"
            attributeFormDefault="unqualified"
            elementFormDefault="qualified"
            xmlns:xs="http://www.w3.org/2001/XMLSchema">
@@ -61,7 +61,7 @@
 						</xs:simpleType>
 					</xs:element>
 					<xs:element name="vat" type="vat" minOccurs="1" maxOccurs="1" />
-				</xs:sequence>
+         </xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
@@ -91,7 +91,7 @@
 						</xs:simpleType>
 					</xs:element>
 					<xs:element name="vat" type="vat" minOccurs="1" maxOccurs="1" />
-				</xs:sequence>
+        </xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
@@ -121,7 +121,7 @@
 						</xs:simpleType>
 					</xs:element>
 					<xs:element name="vat" type="vat" minOccurs="1" maxOccurs="1" />
-				</xs:sequence>
+        </xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
@@ -154,7 +154,7 @@
 						</xs:simpleType>
 					</xs:element>
 					<xs:element name="vat" type="vat" minOccurs="1" maxOccurs="1" />
-				</xs:sequence>
+        </xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
@@ -180,6 +180,8 @@
 			<xs:element name="salePrice" type="money" minOccurs="1" maxOccurs="1" />
 			<xs:element name="originalPrice" type="money" minOccurs="1" maxOccurs="1" />
 			<xs:element name="isShippedFromEU" type="xs:boolean" minOccurs="0" maxOccurs="1" />
+      <xs:element name="shippingMethod" type="shippingMethods" minOccurs="0" maxOccurs="1" />
+      <xs:element name="carrier" type="carriers" minOccurs="0" maxOccurs="1" />
 		</xs:sequence>
 	</xs:complexType>
 
@@ -201,5 +203,86 @@
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
+
+  <xs:simpleType name="shippingMethods">
+    <xs:annotation>
+      <xs:documentation>
+        [HomeDelivery - Home delivery],
+        [PickupPoint - Delivery to pickup point],
+        [Mailbox - Delivery to mailbox],
+        [Digital - Digital product (E-mail or SMS), no carrier]
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="HomeDelivery" />
+      <xs:enumeration value="PickupPoint" />
+      <xs:enumeration value="Mailbox" />
+      <xs:enumeration value="Digital" />
+    </xs:restriction>
+  </xs:simpleType>
+
+
+  <xs:simpleType name="carriers">
+    <xs:annotation>
+      <xs:documentation>
+        [Airmee - Airmee],
+        [Asendia - Asendia],
+        [Best - Best],
+        [Bring - Bring],
+        [Budbee - Budbee],
+        [Chronopost - Chronopost],
+        [CityMail - CityMail],
+        [Dao - dao],
+        [DbSchenker - DB Schenker],
+        [Dhl -DHL Unified],
+        [Dpd - DPD],
+        [Dsv - DSV],
+        [EarlyBird - EarlyBird],
+        [FedEx - FedEx],
+        [Gls - GLS],
+        [Helthjem - Helthjem],
+        [Instabee - Instabee],
+        [Instabox - Instabox],
+        [Itella - itella],
+        [Matkahuolto - Matkahuolto],
+        [Posti - Posti],
+        [PostNl - PostNL],
+        [PostNord - PostNord],
+        [Tnt - TNT],
+        [Ups - UPS],
+        [YunExpress - YunExpress],
+        [AlandPost - Åland Post],
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="Airmee" />
+      <xs:enumeration value="Asendia" />
+      <xs:enumeration value="Best" />
+      <xs:enumeration value="Bring" />
+      <xs:enumeration value="Budbee" />
+      <xs:enumeration value="Chronopost" />
+      <xs:enumeration value="CityMail" />
+      <xs:enumeration value="Dao" />
+      <xs:enumeration value="DbSchenker" />
+      <xs:enumeration value="Dhl" />
+      <xs:enumeration value="Dpd" />
+      <xs:enumeration value="Dsv" />
+      <xs:enumeration value="EarlyBird" />
+      <xs:enumeration value="FedEx" />
+      <xs:enumeration value="Gls" />
+      <xs:enumeration value="Helthjem" />
+      <xs:enumeration value="Instabee" />
+      <xs:enumeration value="Instabox" />
+      <xs:enumeration value="Itella" />
+      <xs:enumeration value="Matkahuolto" />
+      <xs:enumeration value="Posti" />
+      <xs:enumeration value="PostNl" />
+      <xs:enumeration value="PostNord" />
+      <xs:enumeration value="Tnt" />
+      <xs:enumeration value="Ups" />
+      <xs:enumeration value="YunExpress" />
+      <xs:enumeration value="AlandPost" />
+    </xs:restriction>
+  </xs:simpleType>
 
 </xs:schema>

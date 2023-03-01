@@ -14,7 +14,7 @@ namespace CdonMarketplace.Product
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "2.0.521.0")]
     [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute("descriptionSections", Namespace="https://schemas.cdon.com/product/4.0/4.12.0/product")]
+    [System.Xml.Serialization.XmlTypeAttribute("descriptionSections", Namespace="https://schemas.cdon.com/product/4.0/4.12.2/product")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class DescriptionSections
@@ -24,7 +24,7 @@ namespace CdonMarketplace.Product
         private System.Collections.Generic.List<DescriptionSection> _se;
         
         [System.Xml.Serialization.XmlArrayAttribute("se")]
-        [System.Xml.Serialization.XmlArrayItemAttribute("section", Namespace="https://schemas.cdon.com/product/4.0/4.12.0/product")]
+        [System.Xml.Serialization.XmlArrayItemAttribute("section", Namespace="https://schemas.cdon.com/product/4.0/4.12.2/product")]
         public System.Collections.Generic.List<DescriptionSection> Se
         {
             get
@@ -65,7 +65,7 @@ namespace CdonMarketplace.Product
         private System.Collections.Generic.List<DescriptionSection> _dk;
         
         [System.Xml.Serialization.XmlArrayAttribute("dk")]
-        [System.Xml.Serialization.XmlArrayItemAttribute("section", Namespace="https://schemas.cdon.com/product/4.0/4.12.0/product")]
+        [System.Xml.Serialization.XmlArrayItemAttribute("section", Namespace="https://schemas.cdon.com/product/4.0/4.12.2/product")]
         public System.Collections.Generic.List<DescriptionSection> Dk
         {
             get
@@ -94,7 +94,7 @@ namespace CdonMarketplace.Product
         private System.Collections.Generic.List<DescriptionSection> _no;
         
         [System.Xml.Serialization.XmlArrayAttribute("no")]
-        [System.Xml.Serialization.XmlArrayItemAttribute("section", Namespace="https://schemas.cdon.com/product/4.0/4.12.0/product")]
+        [System.Xml.Serialization.XmlArrayItemAttribute("section", Namespace="https://schemas.cdon.com/product/4.0/4.12.2/product")]
         public System.Collections.Generic.List<DescriptionSection> No
         {
             get
@@ -123,7 +123,7 @@ namespace CdonMarketplace.Product
         private System.Collections.Generic.List<DescriptionSection> _fi;
         
         [System.Xml.Serialization.XmlArrayAttribute("fi")]
-        [System.Xml.Serialization.XmlArrayItemAttribute("section", Namespace="https://schemas.cdon.com/product/4.0/4.12.0/product")]
+        [System.Xml.Serialization.XmlArrayItemAttribute("section", Namespace="https://schemas.cdon.com/product/4.0/4.12.2/product")]
         public System.Collections.Generic.List<DescriptionSection> Fi
         {
             get
@@ -152,7 +152,7 @@ namespace CdonMarketplace.Product
         private System.Collections.Generic.List<DescriptionSection> _en;
         
         [System.Xml.Serialization.XmlArrayAttribute("en")]
-        [System.Xml.Serialization.XmlArrayItemAttribute("section", Namespace="https://schemas.cdon.com/product/4.0/4.12.0/product")]
+        [System.Xml.Serialization.XmlArrayItemAttribute("section", Namespace="https://schemas.cdon.com/product/4.0/4.12.2/product")]
         public System.Collections.Generic.List<DescriptionSection> En
         {
             get
